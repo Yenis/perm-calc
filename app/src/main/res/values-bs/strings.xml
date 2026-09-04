@@ -3,15 +3,15 @@
     <string name="common_grant">Dozvoli pristup</string>
     <string name="common_skip">Preskoči demo</string>
     <string name="common_close">Zatvori</string>
-    <string name="common_understand">Razumijem, nastavi</string>
+    <string name="common_understand">Razumijem — nastavi</string>
     <string name="common_denied">Pristup odbijen</string>
     <string name="common_denied_msg">Odbio/la si ovu dozvolu. Prava zlonamjerna aplikacija bi pitala iznova i iznova dok ne popustiš.</string>
     <string name="common_unknown">Nepoznato</string>
 
     <string name="disclaimer_title">Edukativna aplikacija</string>
-    <string name="disclaimer_subtitle">Demonstracija opasnosti od dozvola</string>
-    <string name="disclaimer_body">Ova aplikacija demonstrira kako Android dozvole mogu biti zloupotrijebljene od strane zlonamjernih aplikacija.\n\nSvaka demonstracija se odvija isključivo na TVOM uređaju. Nikakvi podaci se nikada ne prenose, dijele niti šalju — uključujući i programeru.\n\nOvo je edukativni alat za privatnost. Razumijevanje ovih rizika pomaže ti da donosiš pametnije odluke o tome kojim aplikacijama vjeruješ.</string>
-    <string name="disclaimer_note">Svi prikupljeni podaci ostaju na tvom telefonu i mogu biti obrisani nakon demonstracije.</string>
+    <string name="disclaimer_subtitle">Praktična demonstracija privatnosti</string>
+    <string name="disclaimer_body">PermCalc je potpuno funkcionalan kalkulator. Ujedno je i lekcija o privatnosti: kada mu daš dozvolu, pokazat će ti tačno šta aplikacija može uraditi u trenutku kada dodirneš \'Dozvoli\' — snimiti fotografiju, snimati zvuk, čitati tvoje kontakte ili odrediti tvoju lokaciju, često a da to i ne primijetiš.\n\nSvaka demonstracija se odvija isključivo na tvom uređaju. Ništa se ne prenosi, ne šalje niti dijeli — uključujući ni programera.\n\nCilj je jednostavan: pomoći ti da razumiješ na šta zapravo pristaješ, kako bi mogao/la donositi bolje odluke o tome kojim aplikacijama vjeruješ.</string>
+    <string name="disclaimer_note">Sve što se snimi ostaje na tvom uređaju i može se obrisati odmah nakon.</string>
 
     <string name="perm_camera">Kamera</string>
     <string name="perm_microphone">Mikrofon</string>
@@ -23,7 +23,7 @@
     <string name="malicious_title">Kako se zloupotrebljava</string>
     <string name="perm_demos_label">⚠ DEMO DOZVOLA</string>
 
-    <string name="banner_title">Pristup odobren — sve izgleda normalno</string>
+    <string name="banner_title">Pristup odobren — radi u pozadini</string>
     <string name="camera_running">Vratio/la si se svom kalkulatoru, gledaš svoja posla. U međuvremenu, u pozadini, aplikacija tiho pravi tvoju fotografiju…</string>
     <string name="microphone_running">Vratio/la si se svom kalkulatoru, gledaš svoja posla. U međuvremenu, u pozadini, aplikacija potiho snima zvuk…</string>
     <string name="contacts_running">Vratio/la si se svom kalkulatoru, gledaš svoja posla. U međuvremenu, u pozadini, aplikacija čita tvoju cijelu listu kontakata…</string>

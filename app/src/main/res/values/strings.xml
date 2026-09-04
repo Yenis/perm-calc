@@ -6,16 +6,16 @@
     <string name="common_grant">Grant Permission</string>
     <string name="common_skip">Skip Demo</string>
     <string name="common_close">Close</string>
-    <string name="common_understand">I Understand, Continue</string>
+    <string name="common_understand">I understand — continue</string>
     <string name="common_denied">Permission Denied</string>
     <string name="common_denied_msg">You declined this permission. In a real malicious app, it would ask again and again until you gave in.</string>
     <string name="common_unknown">Unknown</string>
 
     <!-- Disclaimer -->
     <string name="disclaimer_title">Educational App</string>
-    <string name="disclaimer_subtitle">Privacy Awareness Demonstrator</string>
-    <string name="disclaimer_body">This app demonstrates how Android permissions can be misused by malicious apps.\n\nEvery demo runs entirely on YOUR device. No data is ever uploaded, transmitted, or shared with anyone — including the developer.\n\nThis is a privacy education tool. Understanding these risks helps you make smarter decisions about which apps you trust.</string>
-    <string name="disclaimer_note">All captured data stays on your phone and can be deleted afterwards.</string>
+    <string name="disclaimer_subtitle">A hands-on privacy awareness demo</string>
+    <string name="disclaimer_body">PermCalc is a fully working calculator. It\'s also a privacy lesson: grant it a permission, and it shows you exactly what an app can do the moment you tap \'Allow\' — take a photo, record audio, read your contacts, or pinpoint your location, often without you noticing.\n\nEvery demonstration runs entirely on your device. Nothing is uploaded, transmitted, or shared with anyone — including the developer.\n\nThe goal is simple: to help you understand what you\'re really agreeing to, so you can make better decisions about which apps you trust.</string>
+    <string name="disclaimer_note">Anything captured stays on your device and can be deleted right after.</string>
 
     <!-- Permission buttons -->
     <string name="perm_camera">Camera</string>
@@ -30,7 +30,7 @@
     <string name="perm_demos_label">⚠ PERMISSION DEMOS</string>
 
     <!-- Background-activity banner (shown on the calculator while a demo runs) -->
-    <string name="banner_title">Permission granted — you\'re back to normal</string>
+    <string name="banner_title">Permission granted — working in the background</string>
     <string name="camera_running">You went back to your calculator, minding your own business. Meanwhile, in the background, the app is silently taking your photo…</string>
     <string name="microphone_running">You went back to your calculator, minding your own business. Meanwhile, in the background, the app is quietly recording audio…</string>
     <string name="contacts_running">You went back to your calculator, minding your own business. Meanwhile, in the background, the app is reading your entire contact list…</string>

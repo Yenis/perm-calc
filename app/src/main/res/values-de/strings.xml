@@ -3,15 +3,15 @@
     <string name="common_grant">Berechtigung erteilen</string>
     <string name="common_skip">Demo überspringen</string>
     <string name="common_close">Schließen</string>
-    <string name="common_understand">Verstanden, weiter</string>
+    <string name="common_understand">Verstanden — weiter</string>
     <string name="common_denied">Berechtigung abgelehnt</string>
     <string name="common_denied_msg">Du hast diese Berechtigung abgelehnt. Eine echte Schad-App würde immer wieder fragen, bis du nachgibst.</string>
     <string name="common_unknown">Unbekannt</string>
 
     <string name="disclaimer_title">Bildungs-App</string>
-    <string name="disclaimer_subtitle">Datenschutz-Aufklärungstool</string>
-    <string name="disclaimer_body">Diese App demonstriert, wie Android-Berechtigungen von schädlichen Apps missbraucht werden können.\n\nJede Demo läuft vollständig auf DEINEM Gerät. Keine Daten werden jemals hochgeladen, übertragen oder geteilt — auch nicht mit dem Entwickler.\n\nDies ist ein Datenschutz-Bildungstool. Das Verständnis dieser Risiken hilft dir, bessere Entscheidungen darüber zu treffen, welchen Apps du vertraust.</string>
-    <string name="disclaimer_note">Alle erfassten Daten bleiben auf deinem Telefon und können danach gelöscht werden.</string>
+    <string name="disclaimer_subtitle">Eine praxisnahe Demo zur Privatsphäre</string>
+    <string name="disclaimer_body">PermCalc ist ein voll funktionsfähiger Taschenrechner. Er ist zugleich eine Lektion über Privatsphäre: Erteilst du eine Berechtigung, zeigt er dir genau, was eine App in dem Moment tun kann, in dem du auf \'Zulassen\' tippst — ein Foto aufnehmen, Audio mitschneiden, deine Kontakte lesen oder deinen Standort bestimmen, oft ohne dass du es bemerkst.\n\nJede Demonstration läuft vollständig auf deinem Gerät. Nichts wird hochgeladen, übertragen oder geteilt — auch nicht mit dem Entwickler.\n\nDas Ziel ist einfach: dir verständlich zu machen, wozu du wirklich Ja sagst, damit du besser entscheiden kannst, welchen Apps du vertraust.</string>
+    <string name="disclaimer_note">Alles Erfasste bleibt auf deinem Gerät und kann direkt danach gelöscht werden.</string>
 
     <string name="perm_camera">Kamera</string>
     <string name="perm_microphone">Mikrofon</string>
@@ -23,7 +23,7 @@
     <string name="malicious_title">Wie es missbraucht wird</string>
     <string name="perm_demos_label">⚠ BERECHTIGUNGS-DEMOS</string>
 
-    <string name="banner_title">Berechtigung erteilt — alles wie gewohnt</string>
+    <string name="banner_title">Berechtigung erteilt — läuft im Hintergrund</string>
     <string name="camera_running">Du bist zurück bei deinem Taschenrechner und kümmerst dich um deine Dinge. Im Hintergrund macht die App unterdessen still ein Foto von dir…</string>
     <string name="microphone_running">Du bist zurück bei deinem Taschenrechner und kümmerst dich um deine Dinge. Im Hintergrund nimmt die App unterdessen leise Audio auf…</string>
     <string name="contacts_running">Du bist zurück bei deinem Taschenrechner und kümmerst dich um deine Dinge. Im Hintergrund liest die App unterdessen deine gesamte Kontaktliste…</string>
