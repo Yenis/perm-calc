@@ -23,11 +23,25 @@ data class MicResult(val filePath: String, val duration: String) : DemoResult
 data class ContactItem(val name: String, val phone: String?, val email: String?)
 data class ContactsResult(val contacts: List<ContactItem>) : DemoResult
 
+data class AddressInfo(
+    val fullLine: String?,
+    val street: String?,
+    val neighborhood: String?,
+    val city: String?,
+    val postalCode: String?,
+    val district: String?,
+    val region: String?,
+    val country: String?,
+)
+
 data class LocationResult(
     val latitude: Double,
     val longitude: Double,
     val accuracy: Float?,
-    val address: String?,
+    val altitude: Double?,
+    val provider: String?,
+    val timeMillis: Long?,
+    val address: AddressInfo?,
 ) : DemoResult
 
 data class MediaItem(val filename: String, val isVideo: Boolean, val dateMillis: Long?)

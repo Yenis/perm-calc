@@ -33,6 +33,9 @@ suspend fun runLocationDemo(context: Context): LocationResult {
         latitude = location.latitude,
         longitude = location.longitude,
         accuracy = if (location.hasAccuracy()) location.accuracy else null,
+        altitude = if (location.hasAltitude()) location.altitude else null,
+        provider = location.provider,
+        timeMillis = location.time.takeIf { it > 0 },
         address = address,
     )
 }
@@ -68,19 +71,25 @@ private suspend fun requestSingleFix(lm: LocationManager): Location? =
         cont.invokeOnCancellation { lm.removeUpdates(listener) }
     }
 
-private suspend fun reverseGeocode(context: Context, lat: Double, lng: Double): String? =
+private suspend fun reverseGeocode(context: Context, lat: Double, lng: Double): AddressInfo? =
     withContext(Dispatchers.IO) {
         try {
             @Suppress("DEPRECATION")
             val results = Geocoder(context, Locale.getDefault()).getFromLocation(lat, lng, 1)
             val r = results?.firstOrNull() ?: return@withContext null
-            listOfNotNull(
-                r.subThoroughfare,
-                r.thoroughfare,
-                r.locality,
-                r.adminArea,
-                r.countryName,
-            ).filter { it.isNotBlank() }.joinToString(", ").ifBlank { null }
+            fun clean(s: String?) = s?.trim()?.ifBlank { null }
+            val street = listOfNotNull(clean(r.subThoroughfare), clean(r.thoroughfare))
+                .joinToString(" ").ifBlank { null }
+            AddressInfo(
+                fullLine = clean(r.getAddressLine(0)),
+                street = street,
+                neighborhood = clean(r.subLocality),
+                city = clean(r.locality) ?: clean(r.subAdminArea),
+                postalCode = clean(r.postalCode),
+                district = clean(r.subAdminArea),
+                region = clean(r.adminArea),
+                country = clean(r.countryName),
+            )
         } catch (_: Exception) {
             null
         }
