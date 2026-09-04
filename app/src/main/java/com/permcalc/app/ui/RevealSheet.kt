@@ -2,6 +2,7 @@ package com.permcalc.app.ui
 
 import android.graphics.BitmapFactory
 import android.media.MediaPlayer
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -12,6 +13,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
@@ -31,8 +33,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -51,6 +56,8 @@ import com.permcalc.app.ui.theme.Palette
 import java.io.File
 import java.text.DateFormat
 import java.util.Date
+import kotlin.math.min
+import kotlin.random.Random
 
 @Composable
 fun RevealSheet(demo: Demo, result: DemoResult, onClose: () -> Unit) {
@@ -263,6 +270,8 @@ private fun ContactsReveal(data: ContactsResult) {
 @Composable
 private fun LocationReveal(data: LocationResult) {
     RevealDesc(tr(R.string.location_reveal_desc))
+    LocationMap(data)
+    Spacer(Modifier.height(12.dp))
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -283,6 +292,120 @@ private fun LocationReveal(data: LocationResult) {
                 tr(R.string.location_reveal_accuracy, it.toInt()),
                 color = Palette.onBg, fontSize = 15.sp, fontWeight = FontWeight.Medium,
                 modifier = Modifier.padding(14.dp),
+            )
+        }
+    }
+}
+
+/**
+ * A stylized, fully offline "map" for the location reveal. The street layout is
+ * seeded by the coordinates (same place → same streets), and the pin is dropped
+ * on the exact centre. No map tiles are fetched, so nothing about the user's
+ * location leaves the device — consistent with the app's on-device promise.
+ */
+@Composable
+private fun LocationMap(data: LocationResult) {
+    val mapBg = Color(0xFF161C28)
+    val roadMinor = Color(0xFF2C3852)
+    val roadMajor = Color(0xFF3C4C6E)
+    val accent = Palette.accent
+    val coordText = "%.5f, %.5f".format(data.latitude, data.longitude)
+    val seed = ((data.latitude * 100000).toLong() * 73856093L) xor
+        ((data.longitude * 100000).toLong() * 19349663L)
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(180.dp)
+            .clip(RoundedCornerShape(12.dp))
+            .background(mapBg)
+            .border(1.dp, Color(0x14FFFFFF), RoundedCornerShape(12.dp)),
+    ) {
+        Canvas(Modifier.fillMaxSize()) {
+            val w = size.width
+            val h = size.height
+            val rng = Random(seed)
+
+            // Street grid
+            repeat(5 + rng.nextInt(4)) {
+                val x = rng.nextFloat() * w
+                val major = rng.nextFloat() < 0.28f
+                drawLine(
+                    if (major) roadMajor else roadMinor,
+                    Offset(x, 0f), Offset(x, h),
+                    strokeWidth = if (major) 6f else 3f,
+                )
+            }
+            repeat(4 + rng.nextInt(4)) {
+                val y = rng.nextFloat() * h
+                val major = rng.nextFloat() < 0.28f
+                drawLine(
+                    if (major) roadMajor else roadMinor,
+                    Offset(0f, y), Offset(w, y),
+                    strokeWidth = if (major) 6f else 3f,
+                )
+            }
+            // A diagonal avenue for character
+            drawLine(
+                roadMajor,
+                Offset(-0.15f * w, rng.nextFloat() * h),
+                Offset(1.15f * w, rng.nextFloat() * h),
+                strokeWidth = 7f,
+            )
+
+            // Accuracy rings + pin, centred on the location
+            val cx = w / 2f
+            val cy = h / 2f
+            val base = min(w, h)
+            drawCircle(Color(0x1A4FC3F7), radius = base * 0.34f, center = Offset(cx, cy))
+            drawCircle(Color(0x224FC3F7), radius = base * 0.20f, center = Offset(cx, cy))
+            drawCircle(Color(0x554FC3F7), radius = base * 0.34f, center = Offset(cx, cy), style = Stroke(width = 2f))
+
+            val headR = 11.dp.toPx()
+            val pinH = 30.dp.toPx()
+            val headCenter = Offset(cx, cy - pinH + headR)
+            val body = Path().apply {
+                moveTo(cx - headR * 0.75f, headCenter.y + headR * 0.15f)
+                lineTo(cx, cy)
+                lineTo(cx + headR * 0.75f, headCenter.y + headR * 0.15f)
+                close()
+            }
+            drawPath(body, accent)
+            drawCircle(accent, radius = headR, center = headCenter)
+            drawCircle(mapBg, radius = headR * 0.42f, center = headCenter)
+        }
+
+        // Compass
+        Text(
+            "N",
+            color = Color(0xB0FFFFFF),
+            fontSize = 12.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.align(Alignment.TopEnd).padding(10.dp),
+        )
+        // Coordinate chip
+        Row(
+            modifier = Modifier
+                .align(Alignment.BottomStart)
+                .padding(10.dp)
+                .clip(RoundedCornerShape(6.dp))
+                .background(Color(0xB00E1420))
+                .padding(horizontal = 8.dp, vertical = 4.dp),
+            horizontalArrangement = Arrangement.spacedBy(4.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Text("📍", fontSize = 11.sp)
+            Text(coordText, color = Palette.onBg, fontSize = 11.sp)
+        }
+        // Accuracy label
+        data.accuracy?.let {
+            Text(
+                "±${it.toInt()} m",
+                color = Color(0xB0FFFFFF),
+                fontSize = 11.sp,
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .padding(10.dp),
             )
         }
     }
