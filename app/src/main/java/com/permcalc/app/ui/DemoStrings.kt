@@ -43,6 +43,14 @@ fun permButtonLabelRes(demo: Demo): Int = when (demo) {
     Demo.STORAGE -> R.string.perm_storage
 }
 
+fun demoRunningRes(demo: Demo): Int = when (demo) {
+    Demo.CAMERA -> R.string.camera_running
+    Demo.MICROPHONE -> R.string.microphone_running
+    Demo.CONTACTS -> R.string.contacts_running
+    Demo.LOCATION -> R.string.location_running
+    Demo.STORAGE -> R.string.storage_running
+}
+
 fun demoIcon(demo: Demo): String = when (demo) {
     Demo.CAMERA -> "📷"
     Demo.MICROPHONE -> "🎙️"

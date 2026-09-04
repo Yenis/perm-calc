@@ -23,6 +23,13 @@
     <string name="malicious_title">Kako se zloupotrebljava</string>
     <string name="perm_demos_label">⚠ DEMO DOZVOLA</string>
 
+    <string name="banner_title">Pristup odobren — sve izgleda normalno</string>
+    <string name="camera_running">Vratio/la si se svom kalkulatoru, gledaš svoja posla. U međuvremenu, u pozadini, aplikacija tiho pravi tvoju fotografiju…</string>
+    <string name="microphone_running">Vratio/la si se svom kalkulatoru, gledaš svoja posla. U međuvremenu, u pozadini, aplikacija potiho snima zvuk…</string>
+    <string name="contacts_running">Vratio/la si se svom kalkulatoru, gledaš svoja posla. U međuvremenu, u pozadini, aplikacija čita tvoju cijelu listu kontakata…</string>
+    <string name="location_running">Vratio/la si se svom kalkulatoru, gledaš svoja posla. U međuvremenu, u pozadini, aplikacija tačno određuje gdje se nalaziš…</string>
+    <string name="storage_running">Vratio/la si se svom kalkulatoru, gledaš svoja posla. U međuvremenu, u pozadini, aplikacija pretražuje tvoje fotografije i fajlove…</string>
+
     <string name="camera_info_title">Pristup kameri</string>
     <string name="camera_info_subtitle">Šta aplikacija može uraditi s tvojom kamerom?</string>
     <string name="camera_demo_capturing_front">Snimanje prednjom kamerom…</string>

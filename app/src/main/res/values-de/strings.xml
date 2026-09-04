@@ -23,6 +23,13 @@
     <string name="malicious_title">Wie es missbraucht wird</string>
     <string name="perm_demos_label">⚠ BERECHTIGUNGS-DEMOS</string>
 
+    <string name="banner_title">Berechtigung erteilt — alles wie gewohnt</string>
+    <string name="camera_running">Du bist zurück bei deinem Taschenrechner und kümmerst dich um deine Dinge. Im Hintergrund macht die App unterdessen still ein Foto von dir…</string>
+    <string name="microphone_running">Du bist zurück bei deinem Taschenrechner und kümmerst dich um deine Dinge. Im Hintergrund nimmt die App unterdessen leise Audio auf…</string>
+    <string name="contacts_running">Du bist zurück bei deinem Taschenrechner und kümmerst dich um deine Dinge. Im Hintergrund liest die App unterdessen deine gesamte Kontaktliste…</string>
+    <string name="location_running">Du bist zurück bei deinem Taschenrechner und kümmerst dich um deine Dinge. Im Hintergrund ermittelt die App unterdessen genau, wo du bist…</string>
+    <string name="storage_running">Du bist zurück bei deinem Taschenrechner und kümmerst dich um deine Dinge. Im Hintergrund durchsucht die App unterdessen deine Fotos und Dateien…</string>
+
     <string name="camera_info_title">Kamerazugriff</string>
     <string name="camera_info_subtitle">Was kann eine App mit deiner Kamera tun?</string>
     <string name="camera_demo_capturing_front">Frontkamera wird aufgenommen…</string>

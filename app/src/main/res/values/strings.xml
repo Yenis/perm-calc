@@ -29,6 +29,14 @@
     <string name="malicious_title">How it\'s abused</string>
     <string name="perm_demos_label">⚠ PERMISSION DEMOS</string>
 
+    <!-- Background-activity banner (shown on the calculator while a demo runs) -->
+    <string name="banner_title">Permission granted — you\'re back to normal</string>
+    <string name="camera_running">You went back to your calculator, minding your own business. Meanwhile, in the background, the app is silently taking your photo…</string>
+    <string name="microphone_running">You went back to your calculator, minding your own business. Meanwhile, in the background, the app is quietly recording audio…</string>
+    <string name="contacts_running">You went back to your calculator, minding your own business. Meanwhile, in the background, the app is reading your entire contact list…</string>
+    <string name="location_running">You went back to your calculator, minding your own business. Meanwhile, in the background, the app is pinpointing exactly where you are…</string>
+    <string name="storage_running">You went back to your calculator, minding your own business. Meanwhile, in the background, the app is scanning your photos and files…</string>
+
     <!-- Camera -->
     <string name="camera_info_title">Camera Access</string>
     <string name="camera_info_subtitle">What can an app do with your camera?</string>

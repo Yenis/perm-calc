@@ -16,13 +16,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -36,14 +36,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.window.Dialog
-import androidx.compose.ui.window.DialogProperties
 import com.permcalc.app.CalculatorState
 import com.permcalc.app.R
 import com.permcalc.app.demos.Demo
 import com.permcalc.app.demos.DemoResult
-import com.permcalc.app.demos.MIC_SECONDS
-import com.permcalc.app.demos.formatTime
 import com.permcalc.app.demos.isGranted
 import com.permcalc.app.demos.permissionsFor
 import com.permcalc.app.demos.runCameraDemo
@@ -53,8 +49,6 @@ import com.permcalc.app.demos.runMicrophoneDemo
 import com.permcalc.app.demos.runStorageDemo
 import com.permcalc.app.ui.theme.Palette
 import kotlinx.coroutines.launch
-
-private enum class Overlay { CAMERA, MIC, LOADING }
 
 @Composable
 fun CalculatorScreen(currentLang: String, onCycleLang: () -> Unit) {
@@ -68,10 +62,8 @@ fun CalculatorScreen(currentLang: String, onCycleLang: () -> Unit) {
     var showInfo by remember { mutableStateOf(false) }
     var revealResult by remember { mutableStateOf<DemoResult?>(null) }
 
-    var overlay by remember { mutableStateOf<Overlay?>(null) }
-    var cameraFront by remember { mutableStateOf(true) }
-    var micTick by remember { mutableIntStateOf(0) }
-    var loadingRes by remember { mutableIntStateOf(R.string.contacts_demo_loading) }
+    // Non-null while a demo runs silently in the background (drives the banner).
+    var runningDemo by remember { mutableStateOf<Demo?>(null) }
 
     var pendingDemo by remember { mutableStateOf<Demo?>(null) }
 
@@ -79,41 +71,21 @@ fun CalculatorScreen(currentLang: String, onCycleLang: () -> Unit) {
 
     fun startDemo(demo: Demo) {
         scope.launch {
+            runningDemo = demo
             try {
-                when (demo) {
-                    Demo.CAMERA -> {
-                        cameraFront = true
-                        overlay = Overlay.CAMERA
-                        val res = runCameraDemo(activity) { front -> cameraFront = front }
-                        overlay = null
-                        revealResult = res; activeDemo = demo
-                    }
-                    Demo.MICROPHONE -> {
-                        micTick = 0
-                        overlay = Overlay.MIC
-                        val res = runMicrophoneDemo(context) { t -> micTick = t }
-                        overlay = null
-                        revealResult = res; activeDemo = demo
-                    }
-                    else -> {
-                        loadingRes = when (demo) {
-                            Demo.CONTACTS -> R.string.contacts_demo_loading
-                            Demo.LOCATION -> R.string.location_demo_loading
-                            else -> R.string.storage_demo_loading
-                        }
-                        overlay = Overlay.LOADING
-                        val res = when (demo) {
-                            Demo.CONTACTS -> runContactsDemo(context)
-                            Demo.LOCATION -> runLocationDemo(context)
-                            else -> runStorageDemo(context)
-                        }
-                        overlay = null
-                        revealResult = res; activeDemo = demo
-                    }
+                val res: DemoResult = when (demo) {
+                    Demo.CAMERA -> runCameraDemo(activity) { /* no UI phase; runs silently */ }
+                    Demo.MICROPHONE -> runMicrophoneDemo(context) { /* silent, no live timer */ }
+                    Demo.CONTACTS -> runContactsDemo(context)
+                    Demo.LOCATION -> runLocationDemo(context)
+                    Demo.STORAGE -> runStorageDemo(context)
                 }
+                revealResult = res
+                activeDemo = demo
             } catch (e: Exception) {
-                overlay = null
                 toast(e.message ?: "Error")
+            } finally {
+                runningDemo = null
             }
         }
     }
@@ -157,6 +129,11 @@ fun CalculatorScreen(currentLang: String, onCycleLang: () -> Unit) {
             ) {
                 Text(currentLang.uppercase(), color = Palette.dim, fontSize = 12.sp, fontWeight = FontWeight.Bold)
             }
+        }
+
+        // Background-activity banner
+        runningDemo?.let { demo ->
+            BackgroundBanner(message = tr(demoRunningRes(demo)))
         }
 
         // Display
@@ -205,74 +182,45 @@ fun CalculatorScreen(currentLang: String, onCycleLang: () -> Unit) {
         )
     }
 
-    // Reveal sheet
+    // Reveal sheet (shown once the background work finishes)
     val result = revealResult
     val revealDemo = activeDemo
-    if (result != null && revealDemo != null && !showInfo) {
+    if (result != null && revealDemo != null && !showInfo && runningDemo == null) {
         RevealSheet(
             demo = revealDemo,
             result = result,
             onClose = { revealResult = null; activeDemo = null },
         )
     }
-
-    // Busy overlays
-    when (overlay) {
-        Overlay.CAMERA -> CenterOverlay {
-            Text(
-                if (cameraFront) tr(R.string.camera_demo_capturing_front) else tr(R.string.camera_demo_capturing_back),
-                color = Palette.onSurfaceVariant, fontSize = 15.sp, textAlign = TextAlign.Center,
-            )
-            Spacer(Modifier.height(16.dp))
-            Text(if (cameraFront) "📸" else "📷", fontSize = 44.sp)
-            Spacer(Modifier.height(16.dp))
-            CircularProgressIndicator(color = Palette.accent)
-        }
-        Overlay.MIC -> CenterOverlay {
-            Text("🎙️", fontSize = 44.sp)
-            Spacer(Modifier.height(12.dp))
-            Text(formatTime(micTick), color = Palette.onBg, fontSize = 48.sp, fontWeight = FontWeight.Thin)
-            Text("/ ${formatTime(MIC_SECONDS)}", color = Palette.muted, fontSize = 14.sp)
-            Spacer(Modifier.height(14.dp))
-            Box(
-                Modifier.fillMaxWidth().height(4.dp).clip(RoundedCornerShape(2.dp)).background(Palette.surfaceVariant),
-            ) {
-                Box(
-                    Modifier.fillMaxWidth(micTick.toFloat() / MIC_SECONDS).height(4.dp)
-                        .clip(RoundedCornerShape(2.dp)).background(Palette.red),
-                )
-            }
-            Spacer(Modifier.height(14.dp))
-            Text(tr(R.string.microphone_demo_recording), color = Palette.maliciousText, fontSize = 14.sp)
-        }
-        Overlay.LOADING -> CenterOverlay {
-            CircularProgressIndicator(color = Palette.accent)
-            Spacer(Modifier.height(16.dp))
-            Text(tr(loadingRes), color = Palette.onSurfaceVariant, fontSize = 15.sp)
-        }
-        null -> {}
-    }
 }
 
 @Composable
-private fun CenterOverlay(content: @Composable androidx.compose.foundation.layout.ColumnScope.() -> Unit) {
-    Dialog(
-        onDismissRequest = {},
-        properties = DialogProperties(usePlatformDefaultWidth = false, dismissOnBackPress = false, dismissOnClickOutside = false),
+private fun BackgroundBanner(message: String) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 12.dp, vertical = 4.dp)
+            .clip(RoundedCornerShape(12.dp))
+            .background(Palette.maliciousBg)
+            .border(1.dp, Palette.maliciousBorder, RoundedCornerShape(12.dp))
+            .padding(horizontal = 14.dp, vertical = 12.dp),
+        horizontalArrangement = Arrangement.spacedBy(12.dp),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
-        Box(
-            modifier = Modifier.fillMaxSize().background(Color(0xE6000000)).padding(24.dp),
-            contentAlignment = Alignment.Center,
-        ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .clip(RoundedCornerShape(20.dp))
-                    .background(Palette.surface)
-                    .padding(28.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                content = content,
+        CircularProgressIndicator(
+            modifier = Modifier.size(20.dp),
+            color = Palette.maliciousText,
+            strokeWidth = 2.dp,
+        )
+        Column(Modifier.weight(1f)) {
+            Text(
+                tr(R.string.banner_title),
+                color = Palette.maliciousText,
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Bold,
             )
+            Spacer(Modifier.height(2.dp))
+            Text(message, color = Palette.onSurfaceVariant, fontSize = 12.sp, lineHeight = 17.sp)
         }
     }
 }
