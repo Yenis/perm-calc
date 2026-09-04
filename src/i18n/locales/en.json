@@ -1,0 +1,159 @@
+{
+  "common": {
+    "appName": "PermCalc",
+    "grant": "Grant Permission",
+    "skip": "Skip Demo",
+    "close": "Close",
+    "back": "Back",
+    "understand": "I Understand, Continue",
+    "denied": "Permission Denied",
+    "deniedMsg": "You declined this permission. In a real malicious app, it would ask again and again until you gave in.",
+    "tryAgain": "Try Again",
+    "saving": "Saving to device...",
+    "done": "Done"
+  },
+  "disclaimer": {
+    "title": "Educational App",
+    "subtitle": "Privacy Awareness Demonstrator",
+    "body": "This app demonstrates how Android permissions can be misused by malicious apps.\n\nEvery demo runs entirely on YOUR device. No data is ever uploaded, transmitted, or shared with anyone — including the developer.\n\nThis is a privacy education tool. Understanding these risks helps you make smarter decisions about which apps you trust.",
+    "note": "All captured data stays on your phone and can be deleted afterwards."
+  },
+  "calculator": {
+    "clear": "C",
+    "clearAll": "AC",
+    "backspace": "⌫",
+    "divide": "÷",
+    "multiply": "×",
+    "subtract": "−",
+    "add": "+",
+    "equals": "="
+  },
+  "permButtons": {
+    "camera": "Camera",
+    "microphone": "Mic",
+    "contacts": "Contacts",
+    "location": "Location",
+    "storage": "Storage"
+  },
+  "camera": {
+    "infoTitle": "Camera Access",
+    "infoSubtitle": "What can an app do with your camera?",
+    "legitimateTitle": "Legitimate uses",
+    "legitimate": [
+      "Video calls & voice meetings",
+      "Scanning QR codes & documents",
+      "Augmented reality features"
+    ],
+    "maliciousTitle": "How it's abused",
+    "malicious": [
+      "Silently photograph you without any flash or sound",
+      "Capture your surroundings, home, or family",
+      "Take photos whenever the app is open in background"
+    ],
+    "demoCapturingFront": "Capturing front camera...",
+    "demoCapturingBack": "Capturing rear camera...",
+    "demoSaving": "Saving photos to your gallery...",
+    "revealTitle": "Photos Saved to Your Gallery",
+    "revealDesc": "I just took 2 photos using your front and rear cameras and saved them to your gallery. Open your Photos app — they are there right now.",
+    "revealFront": "Front Camera",
+    "revealBack": "Rear Camera",
+    "warning": "I did this the moment you tapped 'Grant Permission' — and I told you about it. A malicious app does exactly the same thing silently, then uploads your photos to a remote server without showing you anything."
+  },
+  "microphone": {
+    "infoTitle": "Microphone Access",
+    "infoSubtitle": "What can an app do with your microphone?",
+    "legitimateTitle": "Legitimate uses",
+    "legitimate": [
+      "Voice calls, meetings, and video chats",
+      "Voice memos and speech-to-text",
+      "Voice search and virtual assistants"
+    ],
+    "maliciousTitle": "How it's abused",
+    "malicious": [
+      "Record your private conversations",
+      "Listen for keywords to build an ad profile",
+      "Stream live audio to remote servers in real-time",
+      "Record non-stop with no way for you to stop it — and no sign it's happening"
+    ],
+    "demoRecording": "Recording audio...",
+    "demoTimer": "Recording: {{time}}",
+    "demoStop": "Stop Recording",
+    "demoSaving": "Saving audio file...",
+    "revealTitle": "Audio Recording Saved",
+    "revealDesc": "I recorded {{duration}} of audio and saved it to your device. Press play below to hear exactly what I captured.",
+    "revealFile": "Saved as: permcalc_demo.m4a",
+    "warning": "I started recording the instant you tapped 'Grant Permission'. A spyware app would stream this audio live to a remote server while you see a perfectly normal interface. You would never know."
+  },
+  "contacts": {
+    "infoTitle": "Contacts Access",
+    "infoSubtitle": "What can an app do with your contacts?",
+    "legitimateTitle": "Legitimate uses",
+    "legitimate": [
+      "Auto-fill contact names when sending messages",
+      "Find friends who also use the app",
+      "Sync contacts for backup"
+    ],
+    "maliciousTitle": "How it's abused",
+    "malicious": [
+      "Build a complete map of your social network",
+      "Sell your contacts to spammers and marketers",
+      "Send phishing messages pretending to be you"
+    ],
+    "demoLoading": "Reading your contacts...",
+    "revealTitle": "Your Contacts ({{count}} found)",
+    "revealDesc": "I found {{count}} people in your life — their names, phone numbers, and email addresses. All of this is now in my hands.",
+    "revealNoContacts": "No contacts found on this device.",
+    "warning": "A malicious app would silently upload every name, number, and email from this list to a server within seconds of you granting permission. This data is sold to data brokers, spammers, and advertisers."
+  },
+  "location": {
+    "infoTitle": "Location Access",
+    "infoSubtitle": "What can an app do with your location?",
+    "legitimateTitle": "Legitimate uses",
+    "legitimate": [
+      "Navigation, maps, and directions",
+      "Finding nearby restaurants and services",
+      "Local weather and news"
+    ],
+    "maliciousTitle": "How it's abused",
+    "malicious": [
+      "Track your movements and routines 24/7",
+      "Identify your home, workplace, and places of worship",
+      "Sell your location history to advertisers or stalkers"
+    ],
+    "demoLoading": "Getting your location...",
+    "revealTitle": "Your Current Location",
+    "revealAddress": "Address",
+    "revealCoords": "Coordinates",
+    "revealAccuracy": "Accuracy: ±{{meters}}m",
+    "revealDesc": "Here is exactly where you are right now. With background location permission — which many apps request — I could track your position 24 hours a day, 7 days a week.",
+    "warning": "This is just your current position. With background access, an app builds a complete history of everywhere you go: your home, your doctor's office, your place of worship, your children's school. This data is worth a fortune to advertisers — and stalkers."
+  },
+  "storage": {
+    "infoTitle": "Storage / Media Access",
+    "infoSubtitle": "What can an app do with your storage?",
+    "legitimateTitle": "Legitimate uses",
+    "legitimate": [
+      "Accessing photos and videos you want to edit",
+      "Saving files you choose to download",
+      "Importing documents you select"
+    ],
+    "maliciousTitle": "How it's abused",
+    "malicious": [
+      "Reading all your photos, videos, and documents",
+      "Finding bank statements and ID scans you downloaded",
+      "Accessing private screenshots and messages"
+    ],
+    "demoLoading": "Scanning your media...",
+    "revealTitle": "Your Media ({{count}} items found)",
+    "revealDesc": "I found {{count}} photos and videos on your device. I can read filenames, metadata, and the content of every single one.",
+    "revealNoMedia": "No media found on this device.",
+    "revealRecentLabel": "Recent items:",
+    "warning": "Every photo you have ever taken, every document you downloaded, every screenshot — all readable by any app you give storage access to. Bank statements, ID scans, private photos, passwords written in notes. All of it."
+  },
+  "language": {
+    "select": "Language",
+    "en": "EN",
+    "de": "DE",
+    "bs": "BS"
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "common": {
+    "appName": "PermCalc",
+    "grant": "Berechtigung erteilen",
+    "skip": "Demo überspringen",
+    "close": "Schließen",
+    "back": "Zurück",
+    "understand": "Verstanden, weiter",
+    "denied": "Berechtigung abgelehnt",
+    "deniedMsg": "Du hast diese Berechtigung abgelehnt. Eine echte Schad-App würde immer wieder fragen, bis du nachgibst.",
+    "tryAgain": "Erneut versuchen",
+    "saving": "Auf Gerät speichern...",
+    "done": "Fertig"
+  },
+  "disclaimer": {
+    "title": "Bildungs-App",
+    "subtitle": "Datenschutz-Aufklärungstool",
+    "body": "Diese App demonstriert, wie Android-Berechtigungen von schädlichen Apps missbraucht werden können.\n\nJede Demo läuft vollständig auf DEINEM Gerät. Keine Daten werden jemals hochgeladen, übertragen oder geteilt — auch nicht mit dem Entwickler.\n\nDies ist ein Datenschutz-Bildungstool. Das Verständnis dieser Risiken hilft dir, bessere Entscheidungen darüber zu treffen, welchen Apps du vertraust.",
+    "note": "Alle erfassten Daten bleiben auf deinem Telefon und können danach gelöscht werden."
+  },
+  "calculator": {
+    "clear": "C",
+    "clearAll": "AC",
+    "backspace": "⌫",
+    "divide": "÷",
+    "multiply": "×",
+    "subtract": "−",
+    "add": "+",
+    "equals": "="
+  },
+  "permButtons": {
+    "camera": "Kamera",
+    "microphone": "Mikrofon",
+    "contacts": "Kontakte",
+    "location": "Standort",
+    "storage": "Speicher"
+  },
+  "camera": {
+    "infoTitle": "Kamerazugriff",
+    "infoSubtitle": "Was kann eine App mit deiner Kamera tun?",
+    "legitimateTitle": "Legitime Verwendung",
+    "legitimate": [
+      "Videoanrufe und Meetings",
+      "QR-Codes und Dokumente scannen",
+      "Augmented-Reality-Funktionen"
+    ],
+    "maliciousTitle": "Wie es missbraucht wird",
+    "malicious": [
+      "Dich still fotografieren — ohne Blitz oder Ton",
+      "Dein Zuhause oder deine Familie aufnehmen",
+      "Fotos machen, wenn die App im Hintergrund läuft"
+    ],
+    "demoCapturingFront": "Frontkamera wird aufgenommen...",
+    "demoCapturingBack": "Rückkamera wird aufgenommen...",
+    "demoSaving": "Fotos in Galerie speichern...",
+    "revealTitle": "Fotos in deiner Galerie gespeichert",
+    "revealDesc": "Ich habe soeben 2 Fotos mit deiner Front- und Rückkamera aufgenommen und in deiner Galerie gespeichert. Öffne deine Fotos-App — sie sind jetzt dort.",
+    "revealFront": "Frontkamera",
+    "revealBack": "Rückkamera",
+    "warning": "Ich habe das in dem Moment getan, in dem du 'Berechtigung erteilen' getippt hast — und ich habe dich darüber informiert. Eine schädliche App tut genau dasselbe lautlos und lädt dann deine Fotos auf einen Server hoch, ohne dir irgendetwas zu zeigen."
+  },
+  "microphone": {
+    "infoTitle": "Mikrofonzugriff",
+    "infoSubtitle": "Was kann eine App mit deinem Mikrofon tun?",
+    "legitimateTitle": "Legitime Verwendung",
+    "legitimate": [
+      "Sprachanrufe, Meetings und Videochats",
+      "Sprachnotizen und Diktat",
+      "Sprachsuche und virtuelle Assistenten"
+    ],
+    "maliciousTitle": "Wie es missbraucht wird",
+    "malicious": [
+      "Deine privaten Gespräche aufzeichnen",
+      "Auf Schlüsselwörter lauschen, um ein Werbeprofil zu erstellen",
+      "Audiostreams in Echtzeit an Remote-Server senden",
+      "Pausenlos aufnehmen — ohne dass du es stoppen kannst und ohne jeden Hinweis darauf"
+    ],
+    "demoRecording": "Audio wird aufgenommen...",
+    "demoTimer": "Aufnahme: {{time}}",
+    "demoStop": "Aufnahme stoppen",
+    "demoSaving": "Audiodatei wird gespeichert...",
+    "revealTitle": "Audioaufnahme gespeichert",
+    "revealDesc": "Ich habe {{duration}} Audio aufgenommen und auf deinem Gerät gespeichert. Drücke unten auf Play, um zu hören, was ich genau aufgenommen habe.",
+    "revealFile": "Gespeichert als: permcalc_demo.m4a",
+    "warning": "Ich habe die Aufnahme in dem Moment gestartet, in dem du 'Berechtigung erteilen' getippt hast. Eine Spyware-App würde dieses Audio live an einen Remote-Server streamen, während du eine völlig normale Oberfläche siehst. Du würdest es niemals merken."
+  },
+  "contacts": {
+    "infoTitle": "Kontaktzugriff",
+    "infoSubtitle": "Was kann eine App mit deinen Kontakten tun?",
+    "legitimateTitle": "Legitime Verwendung",
+    "legitimate": [
+      "Automatisches Ausfüllen von Kontaktnamen",
+      "Freunde finden, die dieselbe App nutzen",
+      "Kontakte zur Sicherung synchronisieren"
+    ],
+    "maliciousTitle": "Wie es missbraucht wird",
+    "malicious": [
+      "Eine vollständige Karte deines sozialen Netzwerks erstellen",
+      "Deine Kontakte an Spammer und Vermarkter verkaufen",
+      "Phishing-Nachrichten senden, die so tun, als kämen sie von dir"
+    ],
+    "demoLoading": "Kontakte werden gelesen...",
+    "revealTitle": "Deine Kontakte ({{count}} gefunden)",
+    "revealDesc": "Ich habe {{count}} Menschen in deinem Leben gefunden — ihre Namen, Telefonnummern und E-Mail-Adressen. All das ist jetzt in meinen Händen.",
+    "revealNoContacts": "Keine Kontakte auf diesem Gerät gefunden.",
+    "warning": "Eine schädliche App würde jedes Mal, wenn du die Berechtigung erteilst, sofort alle Namen, Nummern und E-Mails dieser Liste auf einen Server hochladen. Diese Daten werden an Datenhändler, Spammer und Werbetreibende verkauft."
+  },
+  "location": {
+    "infoTitle": "Standortzugriff",
+    "infoSubtitle": "Was kann eine App mit deinem Standort tun?",
+    "legitimateTitle": "Legitime Verwendung",
+    "legitimate": [
+      "Navigation, Karten und Wegbeschreibungen",
+      "Restaurants und Dienste in der Nähe finden",
+      "Lokales Wetter und Nachrichten"
+    ],
+    "maliciousTitle": "Wie es missbraucht wird",
+    "malicious": [
+      "Deine Bewegungen und Gewohnheiten rund um die Uhr verfolgen",
+      "Dein Zuhause, deinen Arbeitsplatz und religiöse Einrichtungen identifizieren",
+      "Deinen Standortverlauf an Werbetreibende oder Stalker verkaufen"
+    ],
+    "demoLoading": "Standort wird ermittelt...",
+    "revealTitle": "Dein aktueller Standort",
+    "revealAddress": "Adresse",
+    "revealCoords": "Koordinaten",
+    "revealAccuracy": "Genauigkeit: ±{{meters}}m",
+    "revealDesc": "Hier ist genau, wo du dich gerade befindest. Mit Hintergrund-Standortberechtigung — die viele Apps anfordern — könnte ich deinen Standort 24 Stunden am Tag, 7 Tage die Woche verfolgen.",
+    "warning": "Das ist nur dein aktueller Standort. Mit Hintergrundzugriff erstellt eine App eine vollständige Geschichte überall, wo du hingehst: dein Zuhause, dein Arzt, deine Gebetsstätte, die Schule deiner Kinder. Diese Daten sind für Werbetreibende — und Stalker — ein Vermögen wert."
+  },
+  "storage": {
+    "infoTitle": "Speicher- und Medienzugriff",
+    "infoSubtitle": "Was kann eine App mit deinem Speicher tun?",
+    "legitimateTitle": "Legitime Verwendung",
+    "legitimate": [
+      "Fotos und Videos aufrufen, die du bearbeiten möchtest",
+      "Dateien speichern, die du herunterlädst",
+      "Dokumente importieren, die du auswählst"
+    ],
+    "maliciousTitle": "Wie es missbraucht wird",
+    "malicious": [
+      "Alle deine Fotos, Videos und Dokumente lesen",
+      "Kontoauszüge und ID-Scans finden, die du heruntergeladen hast",
+      "Auf private Screenshots und Nachrichten zugreifen"
+    ],
+    "demoLoading": "Medien werden durchsucht...",
+    "revealTitle": "Deine Medien ({{count}} Elemente gefunden)",
+    "revealDesc": "Ich habe {{count}} Fotos und Videos auf deinem Gerät gefunden. Ich kann Dateinamen, Metadaten und den Inhalt jedes einzelnen lesen.",
+    "revealNoMedia": "Keine Medien auf diesem Gerät gefunden.",
+    "revealRecentLabel": "Neueste Elemente:",
+    "warning": "Jedes Foto, das du je gemacht hast, jedes heruntergeladene Dokument, jeder Screenshot — alles lesbar für jede App, der du Speicherzugriff gewährst. Kontoauszüge, ID-Scans, private Fotos, in Notizen gespeicherte Passwörter. Alles davon."
+  },
+  "language": {
+    "select": "Sprache",
+    "en": "EN",
+    "de": "DE",
+    "bs": "BS"
+  }
+}

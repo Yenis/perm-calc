@@ -1,0 +1,159 @@
+{
+  "common": {
+    "appName": "PermCalc",
+    "grant": "Dozvoli pristup",
+    "skip": "Preskoči demo",
+    "close": "Zatvori",
+    "back": "Nazad",
+    "understand": "Razumijem, nastavi",
+    "denied": "Pristup odbijen",
+    "deniedMsg": "Odbio/la si ovu dozvolu. Prava zlonamjerna aplikacija bi pitala iznova i iznova dok ne popustiš.",
+    "tryAgain": "Pokušaj ponovo",
+    "saving": "Čuvanje na uređaj...",
+    "done": "Gotovo"
+  },
+  "disclaimer": {
+    "title": "Edukativna aplikacija",
+    "subtitle": "Demonstracija opasnosti od dozvola",
+    "body": "Ova aplikacija demonstrira kako Android dozvole mogu biti zloupotrijebljene od strane zlonamjernih aplikacija.\n\nSvaka demonstracija se odvija isključivo na TVOM uređaju. Nikakvi podaci se nikada ne prenose, dijele niti šalju — uključujući i programeru.\n\nOvo je edukativni alat za privatnost. Razumijevanje ovih rizika pomaže ti da donosiš pametnije odluke o tome kojim aplikacijama vjeruješ.",
+    "note": "Svi prikupljeni podaci ostaju na tvom telefonu i mogu biti obrisani nakon demonstracije."
+  },
+  "calculator": {
+    "clear": "C",
+    "clearAll": "AC",
+    "backspace": "⌫",
+    "divide": "÷",
+    "multiply": "×",
+    "subtract": "−",
+    "add": "+",
+    "equals": "="
+  },
+  "permButtons": {
+    "camera": "Kamera",
+    "microphone": "Mikrofon",
+    "contacts": "Kontakti",
+    "location": "Lokacija",
+    "storage": "Pohrana"
+  },
+  "camera": {
+    "infoTitle": "Pristup kameri",
+    "infoSubtitle": "Šta aplikacija može uraditi s tvojom kamerom?",
+    "legitimateTitle": "Legitimna upotreba",
+    "legitimate": [
+      "Video pozivi i sastanci",
+      "Skeniranje QR kodova i dokumenata",
+      "Augmented reality funkcije"
+    ],
+    "maliciousTitle": "Kako se zloupotrebljava",
+    "malicious": [
+      "Tajno te fotografirati — bez bljeska ili zvuka",
+      "Snimiti tvoj dom ili porodicu",
+      "Praviti fotografije dok aplikacija radi u pozadini"
+    ],
+    "demoCapturingFront": "Snimanje prednjom kamerom...",
+    "demoCapturingBack": "Snimanje stražnjom kamerom...",
+    "demoSaving": "Čuvanje fotografija u galeriju...",
+    "revealTitle": "Fotografije sačuvane u tvoju galeriju",
+    "revealDesc": "Upravo sam napravio/la 2 fotografije koristeći tvoju prednju i stražnju kameru i sačuvao/la ih u tvoju galeriju. Otvori aplikaciju Fotografije — one su već tamo.",
+    "revealFront": "Prednja kamera",
+    "revealBack": "Stražnja kamera",
+    "warning": "Uradio/la sam ovo u trenutku kada si dodirnuo/la 'Dozvoli pristup' — i obavijestio/la sam te o tome. Zlonamjerna aplikacija radi potpuno isto, ali tiho, a zatim šalje tvoje fotografije na udaljeni server bez da ti ikad pokaže bilo šta."
+  },
+  "microphone": {
+    "infoTitle": "Pristup mikrofonu",
+    "infoSubtitle": "Šta aplikacija može uraditi s tvojim mikrofonom?",
+    "legitimateTitle": "Legitimna upotreba",
+    "legitimate": [
+      "Glasovni pozivi, sastanci i video ćaskanje",
+      "Glasovne bilješke i diktiranje",
+      "Glasovna pretraga i virtualni asistenti"
+    ],
+    "maliciousTitle": "Kako se zloupotrebljava",
+    "malicious": [
+      "Snimanje tvojih privatnih razgovora",
+      "Osluškivanje ključnih riječi za pravljenje reklamnog profila",
+      "Streaming zvuka u realnom vremenu na udaljene servere",
+      "Neprekidno snimanje — bez ikakvog načina da ga zaustaviš i bez znaka da se dešava"
+    ],
+    "demoRecording": "Snimanje zvuka...",
+    "demoTimer": "Snimanje: {{time}}",
+    "demoStop": "Zaustavi snimanje",
+    "demoSaving": "Čuvanje audio fajla...",
+    "revealTitle": "Audio snimak sačuvan",
+    "revealDesc": "Snimio/la sam {{duration}} zvuka i sačuvao/la na tvom uređaju. Pritisni play ispod da čuješ šta sam tačno snimio/la.",
+    "revealFile": "Sačuvano kao: permcalc_demo.m4a",
+    "warning": "Počeo/la sam snimati u trenutku kada si dodirnuo/la 'Dozvoli pristup'. Špijunska aplikacija bi streamovala ovaj zvuk uživo na udaljeni server dok ti vidiš potpuno normalno sučelje. Nikad ne bi znao/la."
+  },
+  "contacts": {
+    "infoTitle": "Pristup kontaktima",
+    "infoSubtitle": "Šta aplikacija može uraditi s tvojim kontaktima?",
+    "legitimateTitle": "Legitimna upotreba",
+    "legitimate": [
+      "Automatsko popunjavanje imena kontakata pri slanju poruka",
+      "Pronalaženje prijatelja koji koriste istu aplikaciju",
+      "Sinkronizacija kontakata za backup"
+    ],
+    "maliciousTitle": "Kako se zloupotrebljava",
+    "malicious": [
+      "Izrada kompletne mape tvoje društvene mreže",
+      "Prodaja tvojih kontakata spamdžijama i marketarima",
+      "Slanje phishing poruka koje se predstavljaju kao ti"
+    ],
+    "demoLoading": "Čitanje kontakata...",
+    "revealTitle": "Tvoji kontakti ({{count}} pronađenih)",
+    "revealDesc": "Pronašao/la sam {{count}} osoba u tvom životu — njihova imena, telefonske brojeve i email adrese. Sve ovo je sada u mojim rukama.",
+    "revealNoContacts": "Nema kontakata na ovom uređaju.",
+    "warning": "Zlonamjerna aplikacija bi odmah po dozvoli tiho prenijela svako ime, broj i email s ove liste na server. Ovi podaci se prodaju posrednicima podataka, spamdžijama i oglašivačima."
+  },
+  "location": {
+    "infoTitle": "Pristup lokaciji",
+    "infoSubtitle": "Šta aplikacija može uraditi s tvojom lokacijom?",
+    "legitimateTitle": "Legitimna upotreba",
+    "legitimate": [
+      "Navigacija, mape i upute",
+      "Pronalaženje restorana i usluga u blizini",
+      "Lokalno vrijeme i vijesti"
+    ],
+    "maliciousTitle": "Kako se zloupotrebljava",
+    "malicious": [
+      "Praćenje tvojih kretanja i navika 24/7",
+      "Identifikacija tvog doma, radnog mjesta i vjerskih mjesta",
+      "Prodaja historije tvoje lokacije oglašivačima ili stalkersima"
+    ],
+    "demoLoading": "Dohvaćanje tvoje lokacije...",
+    "revealTitle": "Tvoja trenutna lokacija",
+    "revealAddress": "Adresa",
+    "revealCoords": "Koordinate",
+    "revealAccuracy": "Tačnost: ±{{meters}}m",
+    "revealDesc": "Evo tačno gdje se nalaziš upravo sada. Sa dozvolom lokacije u pozadini — koju mnoge aplikacije traže — mogao/la bih pratiti tvoju poziciju 24 sata dnevno, 7 dana sedmično.",
+    "warning": "Ovo je samo tvoja trenutna pozicija. Sa pristupom u pozadini, aplikacija gradi kompletnu historiju svuda gdje ideš: tvoj dom, tvoj doktor, tvoje mjesto bogosluženja, škola tvoje djece. Ovi podaci vrijede bogatstvo oglašivačima — i stalkersima."
+  },
+  "storage": {
+    "infoTitle": "Pristup pohrani i medijima",
+    "infoSubtitle": "Šta aplikacija može uraditi s tvojom pohranom?",
+    "legitimateTitle": "Legitimna upotreba",
+    "legitimate": [
+      "Pristup fotografijama i videima koje želiš uređivati",
+      "Čuvanje fajlova koje preuzimeš",
+      "Uvoz dokumenata koje odabereš"
+    ],
+    "maliciousTitle": "Kako se zloupotrebljava",
+    "malicious": [
+      "Čitanje svih tvojih fotografija, videa i dokumenata",
+      "Pronalaženje izvoda s računa i skenova dokumenata",
+      "Pristup privatnim screenshotovima i porukama"
+    ],
+    "demoLoading": "Pretraživanje medija...",
+    "revealTitle": "Tvoji mediji ({{count}} pronađenih stavki)",
+    "revealDesc": "Pronašao/la sam {{count}} fotografija i videa na tvom uređaju. Mogu čitati nazive fajlova, metapodatke i sadržaj svakog od njih.",
+    "revealNoMedia": "Nema medija na ovom uređaju.",
+    "revealRecentLabel": "Nedavne stavke:",
+    "warning": "Svaka fotografija koju si ikad napravio/la, svaki preuzeti dokument, svaki screenshot — sve čitljivo svakoj aplikaciji kojoj daš pristup pohrani. Izvodi s računa, skenovi dokumenata, privatne fotografije, lozinke upisane u bilješke. Sve od toga."
+  },
+  "language": {
+    "select": "Jezik",
+    "en": "EN",
+    "de": "DE",
+    "bs": "BS"
+  }
+}
