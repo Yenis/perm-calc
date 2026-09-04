@@ -1,5 +1,7 @@
 package com.permcalc.app
 
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -9,6 +11,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import com.permcalc.app.demos.Demo
+import com.permcalc.app.demos.permissionsFor
 import com.permcalc.app.ui.CalculatorScreen
 import com.permcalc.app.ui.DisclaimerScreen
 import com.permcalc.app.ui.LocalLocalizedContext
@@ -26,7 +30,9 @@ class MainActivity : ComponentActivity() {
         val prefs = getSharedPreferences("permcalc", MODE_PRIVATE)
 
         setContent {
-            var accepted by remember { mutableStateOf(prefs.getBoolean(KEY_ACCEPTED, false)) }
+            // Disclaimer acceptance is intentionally NOT persisted: every fresh
+            // launch starts un-accepted so each viewer gets the first-time flow.
+            var accepted by remember { mutableStateOf(false) }
             var lang by remember {
                 mutableStateOf(prefs.getString(KEY_LANG, null) ?: defaultLang())
             }
@@ -46,20 +52,38 @@ class MainActivity : ComponentActivity() {
                             },
                         )
                     } else {
-                        DisclaimerScreen(
-                            onAccept = {
-                                prefs.edit().putBoolean(KEY_ACCEPTED, true).apply()
-                                accepted = true
-                            },
-                        )
+                        DisclaimerScreen(onAccept = { accepted = true })
                     }
                 }
             }
         }
     }
 
+    /**
+     * Reset the app to a first-time state when it leaves the foreground: schedule
+     * revocation of every runtime permission we hold, applied once the app is
+     * killed. Combined with the non-persisted disclaimer, reopening the app after
+     * closing it gives a clean first-time experience with no manual steps in
+     * Android Settings.
+     *
+     * revokeSelfPermissionsOnKill() requires API 33 (Android 13). On older
+     * versions there is no API for an app to revoke its own permissions, so this
+     * is a no-op there.
+     */
+    override fun onStop() {
+        super.onStop()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && !isChangingConfigurations) {
+            val granted = Demo.ALL
+                .flatMap { permissionsFor(it).toList() }
+                .distinct()
+                .filter { checkSelfPermission(it) == PackageManager.PERMISSION_GRANTED }
+            if (granted.isNotEmpty()) {
+                runCatching { revokeSelfPermissionsOnKill(granted) }
+            }
+        }
+    }
+
     companion object {
-        private const val KEY_ACCEPTED = "disclaimer_accepted"
         private const val KEY_LANG = "lang"
     }
 }
