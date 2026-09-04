@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PermCalc</string>
+
+    <!-- Common -->
+    <string name="common_grant">Grant Permission</string>
+    <string name="common_skip">Skip Demo</string>
+    <string name="common_close">Close</string>
+    <string name="common_understand">I Understand, Continue</string>
+    <string name="common_denied">Permission Denied</string>
+    <string name="common_denied_msg">You declined this permission. In a real malicious app, it would ask again and again until you gave in.</string>
+    <string name="common_unknown">Unknown</string>
+
+    <!-- Disclaimer -->
+    <string name="disclaimer_title">Educational App</string>
+    <string name="disclaimer_subtitle">Privacy Awareness Demonstrator</string>
+    <string name="disclaimer_body">This app demonstrates how Android permissions can be misused by malicious apps.\n\nEvery demo runs entirely on YOUR device. No data is ever uploaded, transmitted, or shared with anyone — including the developer.\n\nThis is a privacy education tool. Understanding these risks helps you make smarter decisions about which apps you trust.</string>
+    <string name="disclaimer_note">All captured data stays on your phone and can be deleted afterwards.</string>
+
+    <!-- Permission buttons -->
+    <string name="perm_camera">Camera</string>
+    <string name="perm_microphone">Mic</string>
+    <string name="perm_contacts">Contacts</string>
+    <string name="perm_location">Location</string>
+    <string name="perm_storage">Storage</string>
+
+    <!-- Shared info card titles -->
+    <string name="legit_title">Legitimate uses</string>
+    <string name="malicious_title">How it\'s abused</string>
+    <string name="perm_demos_label">⚠ PERMISSION DEMOS</string>
+
+    <!-- Camera -->
+    <string name="camera_info_title">Camera Access</string>
+    <string name="camera_info_subtitle">What can an app do with your camera?</string>
+    <string name="camera_demo_capturing_front">Capturing front camera…</string>
+    <string name="camera_demo_capturing_back">Capturing rear camera…</string>
+    <string name="camera_demo_saving">Saving photos to your gallery…</string>
+    <string name="camera_reveal_title">Photos Saved to Your Gallery</string>
+    <string name="camera_reveal_desc">I just took 2 photos using your front and rear cameras and saved them to your gallery. Open your Photos app — they are there right now.</string>
+    <string name="camera_reveal_front">Front Camera</string>
+    <string name="camera_reveal_back">Rear Camera</string>
+    <string name="camera_warning">I did this the moment you tapped \'Grant Permission\' — and I told you about it. A malicious app does exactly the same thing silently, then uploads your photos to a remote server without showing you anything.</string>
+    <string-array name="camera_legitimate">
+        <item>Video calls &amp; voice meetings</item>
+        <item>Scanning QR codes &amp; documents</item>
+        <item>Augmented reality features</item>
+    </string-array>
+    <string-array name="camera_malicious">
+        <item>Silently photograph you without any flash or sound</item>
+        <item>Capture your surroundings, home, or family</item>
+        <item>Take photos whenever the app is open in background</item>
+    </string-array>
+
+    <!-- Microphone -->
+    <string name="microphone_info_title">Microphone Access</string>
+    <string name="microphone_info_subtitle">What can an app do with your microphone?</string>
+    <string name="microphone_demo_recording">Recording audio…</string>
+    <string name="microphone_demo_saving">Saving audio file…</string>
+    <string name="microphone_reveal_title">Audio Recording Saved</string>
+    <string name="microphone_reveal_desc">I recorded %1$s of audio and saved it to your device. Press play below to hear exactly what I captured.</string>
+    <string name="microphone_reveal_file">Saved as: permcalc_demo.m4a</string>
+    <string name="microphone_play">Play Recording</string>
+    <string name="microphone_stop">Stop</string>
+    <string name="microphone_warning">I started recording the instant you tapped \'Grant Permission\'. A spyware app would stream this audio live to a remote server while you see a perfectly normal interface. You would never know.</string>
+    <string-array name="microphone_legitimate">
+        <item>Voice calls, meetings, and video chats</item>
+        <item>Voice memos and speech-to-text</item>
+        <item>Voice search and virtual assistants</item>
+    </string-array>
+    <string-array name="microphone_malicious">
+        <item>Record your private conversations</item>
+        <item>Listen for keywords to build an ad profile</item>
+        <item>Stream live audio to remote servers in real-time</item>
+        <item>Record non-stop with no way for you to stop it — and no sign it\'s happening</item>
+    </string-array>
+
+    <!-- Contacts -->
+    <string name="contacts_info_title">Contacts Access</string>
+    <string name="contacts_info_subtitle">What can an app do with your contacts?</string>
+    <string name="contacts_demo_loading">Reading your contacts…</string>
+    <string name="contacts_reveal_title">Your Contacts (%1$d found)</string>
+    <string name="contacts_reveal_desc">I found %1$d people in your life — their names, phone numbers, and email addresses. All of this is now in my hands.</string>
+    <string name="contacts_reveal_no_contacts">No contacts found on this device.</string>
+    <string name="contacts_more">…and %1$d more</string>
+    <string name="contacts_warning">A malicious app would silently upload every name, number, and email from this list to a server within seconds of you granting permission. This data is sold to data brokers, spammers, and advertisers.</string>
+    <string-array name="contacts_legitimate">
+        <item>Auto-fill contact names when sending messages</item>
+        <item>Find friends who also use the app</item>
+        <item>Sync contacts for backup</item>
+    </string-array>
+    <string-array name="contacts_malicious">
+        <item>Build a complete map of your social network</item>
+        <item>Sell your contacts to spammers and marketers</item>
+        <item>Send phishing messages pretending to be you</item>
+    </string-array>
+
+    <!-- Location -->
+    <string name="location_info_title">Location Access</string>
+    <string name="location_info_subtitle">What can an app do with your location?</string>
+    <string name="location_demo_loading">Getting your location…</string>
+    <string name="location_reveal_title">Your Current Location</string>
+    <string name="location_reveal_address">Address</string>
+    <string name="location_reveal_coords">Coordinates</string>
+    <string name="location_reveal_accuracy">Accuracy: ±%1$dm</string>
+    <string name="location_reveal_desc">Here is exactly where you are right now. With background location permission — which many apps request — I could track your position 24 hours a day, 7 days a week.</string>
+    <string name="location_warning">This is just your current position. With background access, an app builds a complete history of everywhere you go: your home, your doctor\'s office, your place of worship, your children\'s school. This data is worth a fortune to advertisers — and stalkers.</string>
+    <string-array name="location_legitimate">
+        <item>Navigation, maps, and directions</item>
+        <item>Finding nearby restaurants and services</item>
+        <item>Local weather and news</item>
+    </string-array>
+    <string-array name="location_malicious">
+        <item>Track your movements and routines 24/7</item>
+        <item>Identify your home, workplace, and places of worship</item>
+        <item>Sell your location history to advertisers or stalkers</item>
+    </string-array>
+
+    <!-- Storage -->
+    <string name="storage_info_title">Storage / Media Access</string>
+    <string name="storage_info_subtitle">What can an app do with your storage?</string>
+    <string name="storage_demo_loading">Scanning your media…</string>
+    <string name="storage_reveal_title">Your Media (%1$d items found)</string>
+    <string name="storage_reveal_desc">I found %1$d photos and videos on your device. I can read filenames, metadata, and the content of every single one.</string>
+    <string name="storage_reveal_no_media">No media found on this device.</string>
+    <string name="storage_reveal_recent_label">Recent items:</string>
+    <string name="storage_warning">Every photo you have ever taken, every document you downloaded, every screenshot — all readable by any app you give storage access to. Bank statements, ID scans, private photos, passwords written in notes. All of it.</string>
+    <string-array name="storage_legitimate">
+        <item>Accessing photos and videos you want to edit</item>
+        <item>Saving files you choose to download</item>
+        <item>Importing documents you select</item>
+    </string-array>
+    <string-array name="storage_malicious">
+        <item>Reading all your photos, videos, and documents</item>
+        <item>Finding bank statements and ID scans you downloaded</item>
+        <item>Accessing private screenshots and messages</item>
+    </string-array>
+</resources>
