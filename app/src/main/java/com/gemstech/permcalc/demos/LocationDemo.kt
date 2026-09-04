@@ -1,4 +1,4 @@
-package com.permcalc.app.demos
+package com.gemstech.permcalc.demos
 
 import android.annotation.SuppressLint
 import android.content.Context

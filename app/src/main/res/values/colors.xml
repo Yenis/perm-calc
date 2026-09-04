@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="bg">#12121f</color>
-    <color name="surface">#1e1e2e</color>
-    <color name="accent">#4fc3f7</color>
-    <color name="ic_launcher_background">#12121f</color>
+    <!-- Mirrors Palette in ui/theme/Theme.kt (GemsTech Tanzanite). -->
+    <color name="bg">#0a0e1a</color>
+    <color name="surface">#141a2b</color>
+    <color name="accent">#4d90ff</color>
+    <color name="ic_launcher_background">#0a0e1a</color>
 </resources>

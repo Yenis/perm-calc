@@ -1,4 +1,4 @@
-package com.permcalc.app.ui
+package com.gemstech.permcalc.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -25,8 +25,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.permcalc.app.R
-import com.permcalc.app.ui.theme.Palette
+import com.gemstech.permcalc.R
+import com.gemstech.permcalc.ui.theme.Palette
 
 @Composable
 fun DisclaimerScreen(onAccept: () -> Unit) {

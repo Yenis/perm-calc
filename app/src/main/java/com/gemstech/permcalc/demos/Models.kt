@@ -1,4 +1,4 @@
-package com.permcalc.app.demos
+package com.gemstech.permcalc.demos
 
 /** Identifiers for the five permission demos. */
 enum class Demo(val key: String) {

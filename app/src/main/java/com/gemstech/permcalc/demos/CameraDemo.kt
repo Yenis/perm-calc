@@ -1,4 +1,4 @@
-package com.permcalc.app.demos
+package com.gemstech.permcalc.demos
 
 import android.content.ContentValues
 import android.content.Context

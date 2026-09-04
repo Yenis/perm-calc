@@ -1,4 +1,4 @@
-package com.permcalc.app.ui
+package com.gemstech.permcalc.ui
 
 import android.graphics.BitmapFactory
 import android.media.MediaPlayer
@@ -39,15 +39,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.permcalc.app.R
-import com.permcalc.app.demos.CameraResult
-import com.permcalc.app.demos.ContactsResult
-import com.permcalc.app.demos.Demo
-import com.permcalc.app.demos.DemoResult
-import com.permcalc.app.demos.LocationResult
-import com.permcalc.app.demos.MicResult
-import com.permcalc.app.demos.StorageResult
-import com.permcalc.app.ui.theme.Palette
+import com.gemstech.permcalc.R
+import com.gemstech.permcalc.demos.CameraResult
+import com.gemstech.permcalc.demos.ContactsResult
+import com.gemstech.permcalc.demos.Demo
+import com.gemstech.permcalc.demos.DemoResult
+import com.gemstech.permcalc.demos.LocationResult
+import com.gemstech.permcalc.demos.MicResult
+import com.gemstech.permcalc.demos.StorageResult
+import com.gemstech.permcalc.ui.theme.Palette
 import java.io.File
 import java.text.DateFormat
 import java.util.Date

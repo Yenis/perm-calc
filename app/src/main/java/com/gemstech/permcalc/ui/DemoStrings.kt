@@ -1,7 +1,7 @@
-package com.permcalc.app.ui
+package com.gemstech.permcalc.ui
 
-import com.permcalc.app.R
-import com.permcalc.app.demos.Demo
+import com.gemstech.permcalc.R
+import com.gemstech.permcalc.demos.Demo
 
 /** Resource IDs backing a demo's info sheet. */
 data class DemoInfoRes(

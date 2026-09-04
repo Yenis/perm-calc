@@ -1,4 +1,4 @@
-package com.permcalc.app.ui
+package com.gemstech.permcalc.ui
 
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -36,18 +36,18 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.permcalc.app.CalculatorState
-import com.permcalc.app.R
-import com.permcalc.app.demos.Demo
-import com.permcalc.app.demos.DemoResult
-import com.permcalc.app.demos.isGranted
-import com.permcalc.app.demos.permissionsFor
-import com.permcalc.app.demos.runCameraDemo
-import com.permcalc.app.demos.runContactsDemo
-import com.permcalc.app.demos.runLocationDemo
-import com.permcalc.app.demos.runMicrophoneDemo
-import com.permcalc.app.demos.runStorageDemo
-import com.permcalc.app.ui.theme.Palette
+import com.gemstech.permcalc.CalculatorState
+import com.gemstech.permcalc.R
+import com.gemstech.permcalc.demos.Demo
+import com.gemstech.permcalc.demos.DemoResult
+import com.gemstech.permcalc.demos.isGranted
+import com.gemstech.permcalc.demos.permissionsFor
+import com.gemstech.permcalc.demos.runCameraDemo
+import com.gemstech.permcalc.demos.runContactsDemo
+import com.gemstech.permcalc.demos.runLocationDemo
+import com.gemstech.permcalc.demos.runMicrophoneDemo
+import com.gemstech.permcalc.demos.runStorageDemo
+import com.gemstech.permcalc.ui.theme.Palette
 import kotlinx.coroutines.launch
 
 @Composable
@@ -201,21 +201,21 @@ private fun BackgroundBanner(message: String) {
             .fillMaxWidth()
             .padding(horizontal = 12.dp, vertical = 4.dp)
             .clip(RoundedCornerShape(12.dp))
-            .background(Palette.maliciousBg)
-            .border(1.dp, Palette.maliciousBorder, RoundedCornerShape(12.dp))
+            .background(Palette.cautionBg)
+            .border(1.dp, Palette.cautionBorder, RoundedCornerShape(12.dp))
             .padding(horizontal = 14.dp, vertical = 12.dp),
         horizontalArrangement = Arrangement.spacedBy(12.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         CircularProgressIndicator(
             modifier = Modifier.size(20.dp),
-            color = Palette.maliciousText,
+            color = Palette.cautionText,
             strokeWidth = 2.dp,
         )
         Column(Modifier.weight(1f)) {
             Text(
                 tr(R.string.banner_title),
-                color = Palette.maliciousText,
+                color = Palette.cautionText,
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Bold,
             )

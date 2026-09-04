@@ -1,23 +1,52 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
+// Release signing is driven by an untracked keystore.properties at the repo
+// root (written by CI from secrets, or by hand for a local release build).
+// When it is absent, release builds fall back to the debug key so that
+// `assembleRelease` still works on a clean checkout.
+val keystorePropertiesFile = rootProject.file("keystore.properties")
+val keystoreProperties = Properties().apply {
+    if (keystorePropertiesFile.exists()) {
+        keystorePropertiesFile.inputStream().use { load(it) }
+    }
+}
+
 android {
-    namespace = "com.permcalc.app"
+    namespace = "com.gemstech.permcalc"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.permcalc.app"
+        applicationId = "com.gemstech.permcalc"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0.0"
     }
 
+    signingConfigs {
+        if (keystorePropertiesFile.exists()) {
+            create("release") {
+                storeFile = file(keystoreProperties.getProperty("PERMCALC_UPLOAD_STORE_FILE"))
+                storePassword = keystoreProperties.getProperty("PERMCALC_UPLOAD_STORE_PASSWORD")
+                keyAlias = keystoreProperties.getProperty("PERMCALC_UPLOAD_KEY_ALIAS")
+                keyPassword = keystoreProperties.getProperty("PERMCALC_UPLOAD_KEY_PASSWORD")
+            }
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig = if (keystorePropertiesFile.exists()) {
+                signingConfigs.getByName("release")
+            } else {
+                signingConfigs.getByName("debug")
+            }
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),

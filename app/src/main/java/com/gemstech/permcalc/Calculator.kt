@@ -1,4 +1,4 @@
-package com.permcalc.app
+package com.gemstech.permcalc
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

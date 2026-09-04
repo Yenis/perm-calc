@@ -1,4 +1,4 @@
-package com.permcalc.app
+package com.gemstech.permcalc
 
 import android.content.pm.PackageManager
 import android.os.Build
@@ -11,15 +11,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import com.permcalc.app.demos.Demo
-import com.permcalc.app.demos.permissionsFor
-import com.permcalc.app.ui.CalculatorScreen
-import com.permcalc.app.ui.DisclaimerScreen
-import com.permcalc.app.ui.LocalLocalizedContext
-import com.permcalc.app.ui.SUPPORTED_LANGS
-import com.permcalc.app.ui.defaultLang
-import com.permcalc.app.ui.localizedContext
-import com.permcalc.app.ui.theme.PermCalcTheme
+import com.gemstech.permcalc.demos.Demo
+import com.gemstech.permcalc.demos.permissionsFor
+import com.gemstech.permcalc.ui.CalculatorScreen
+import com.gemstech.permcalc.ui.DisclaimerScreen
+import com.gemstech.permcalc.ui.LocalLocalizedContext
+import com.gemstech.permcalc.ui.SUPPORTED_LANGS
+import com.gemstech.permcalc.ui.defaultLang
+import com.gemstech.permcalc.ui.localizedContext
+import com.gemstech.permcalc.ui.theme.PermCalcTheme
 
 class MainActivity : ComponentActivity() {
 

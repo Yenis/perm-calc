@@ -1,4 +1,4 @@
-package com.permcalc.app.ui
+package com.gemstech.permcalc.ui
 
 import android.content.Context
 import android.content.res.Configuration
