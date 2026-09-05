@@ -1,0 +1,121 @@
+# Release pipeline. Pushing a tag like v1.2.3 builds the signed APK on a native
+# runner and attaches it (plus a .sha256) to a GitHub release for that tag - the
+# release is created automatically if it doesn't exist yet.
+#
+#   create-release  ubuntu   ensures the GitHub release exists (notes from CHANGELOG)
+#   android         ubuntu   signed APK          (needs keystore secrets - see below)
+#
+# Required secrets for the `android` job (Settings -> Secrets and variables ->
+# Actions). Without them the job fails rather than shipping a debug-signed APK:
+#   ANDROID_KEYSTORE_BASE64    base64 of app/permcalc-release.keystore
+#                              (create with: base64 -w0 permcalc-release.keystore)
+#   ANDROID_KEYSTORE_PASSWORD  store password
+#   ANDROID_KEY_ALIAS          key alias (permcalc)
+#   ANDROID_KEY_PASSWORD       key password
+
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to build and attach assets to (must already be pushed, e.g. v1.0.1)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  # --------------------------------------------------------------------------
+  create-release:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.tag.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: tag
+        run: echo "tag=${{ github.event.inputs.tag || github.ref_name }}" >> "$GITHUB_OUTPUT"
+
+      - name: Ensure the release exists
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.tag.outputs.tag }}
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists - assets will be added to it."
+            exit 0
+          fi
+          ver="${TAG#v}"
+          # Pull this version's section out of CHANGELOG.md if present
+          awk -v v="$ver" '
+            $0 ~ "^## \\[" v "\\]" { p=1; next }
+            p && /^## \[/ { p=0 }
+            p { print }
+          ' CHANGELOG.md > notes.md
+          if [ -s notes.md ]; then
+            gh release create "$TAG" --title "PermCalc $TAG" --notes-file notes.md
+          else
+            gh release create "$TAG" --title "PermCalc $TAG" --generate-notes
+          fi
+
+  # --------------------------------------------------------------------------
+  android:
+    needs: create-release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: gradle
+      - uses: android-actions/setup-android@v3
+
+      # The APK reports versionName from app/build.gradle.kts, not from the tag.
+      # A mismatch is a bump someone forgot, so say so loudly without failing.
+      - name: Check versionName against the tag
+        env:
+          TAG: ${{ needs.create-release.outputs.tag }}
+        run: |
+          ver="${TAG#v}"
+          declared="$(sed -n 's/.*versionName *= *"\(.*\)".*/\1/p' app/build.gradle.kts | head -1)"
+          if [ "$declared" != "$ver" ]; then
+            echo "::warning::versionName in app/build.gradle.kts is $declared but the tag is $TAG"
+          fi
+
+      - name: Restore signing keystore
+        env:
+          KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          STORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          if [ -z "$KEYSTORE_B64" ]; then
+            echo "::error::ANDROID_KEYSTORE_BASE64 secret is not set - cannot produce a release-signed APK."
+            exit 1
+          fi
+          echo "$KEYSTORE_B64" | base64 -d > app/permcalc-release.keystore
+          printf 'PERMCALC_UPLOAD_STORE_FILE=permcalc-release.keystore\n' >  keystore.properties
+          printf 'PERMCALC_UPLOAD_KEY_ALIAS=%s\n'      "$KEY_ALIAS"       >> keystore.properties
+          printf 'PERMCALC_UPLOAD_STORE_PASSWORD=%s\n' "$STORE_PASSWORD"  >> keystore.properties
+          printf 'PERMCALC_UPLOAD_KEY_PASSWORD=%s\n'   "$KEY_PASSWORD"    >> keystore.properties
+
+      - name: Assemble release APK
+        run: ./gradlew :app:assembleRelease --no-daemon
+
+      - name: Rename + checksum + upload
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.create-release.outputs.tag }}
+        run: |
+          ver="${TAG#v}"
+          mkdir -p out
+          cp app/build/outputs/apk/release/app-release.apk \
+             "out/PermCalc-${ver}-android.apk"
+          cd out
+          sha256sum "PermCalc-${ver}-android.apk" > "PermCalc-${ver}-android.apk.sha256"
+          gh release upload "$TAG" ./* --clobber

@@ -43,3 +43,10 @@ CI writes it from the `ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD`,
 `ANDROID_KEY_ALIAS` and `ANDROID_KEY_PASSWORD` secrets — the same secret names
 PortalGems uses, so both repos configure identically. When the file is absent,
 `assembleRelease` falls back to the debug key so a clean checkout still builds.
+
+## License
+
+GPL-3.0-or-later (`LICENSE` is the unmodified FSF text; the copyright line lives
+in the README, not in per-file headers). The copyleft is a deliberate choice, not
+an inherited one — see the README's "Why copyleft". Any dependency added here
+must be GPLv3-compatible; the current set is entirely Apache-2.0.
