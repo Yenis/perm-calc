@@ -24,4 +24,4 @@ own device, with nothing leaving the phone.
 - **Nothing is uploaded.** Every demo runs on-device, and closing the app
   resets it to a first-time state.
 
-[1.0.0]: https://github.com/Yenis/test-app-android-permissions/releases/tag/v1.0.0
+[1.0.0]: https://github.com/Yenis/perm-calc/releases/tag/v1.0.0

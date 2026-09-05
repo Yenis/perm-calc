@@ -42,7 +42,7 @@ seeing the other side of that dialog.
 ## Download
 
 Grab the latest build from the
-**[releases page](https://github.com/Yenis/test-app-android-permissions/releases/latest)**:
+**[releases page](https://github.com/Yenis/perm-calc/releases/latest)**:
 
 | Platform | File | Notes |
 |---|---|---|
