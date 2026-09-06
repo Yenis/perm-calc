@@ -10,7 +10,7 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import java.util.Locale
 
 /** Supported UI languages, cycled by the language button. */
-val SUPPORTED_LANGS = listOf("en", "de", "bs")
+val SUPPORTED_LANGS = listOf("en", "de", "bs", "es", "fr", "ru")
 
 fun defaultLang(): String {
     val sys = Locale.getDefault().language

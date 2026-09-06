@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -29,17 +30,30 @@ import com.gemstech.permcalc.R
 import com.gemstech.permcalc.ui.theme.Palette
 
 @Composable
-fun DisclaimerScreen(onAccept: () -> Unit) {
+fun DisclaimerScreen(
+    currentLang: String,
+    onCycleLang: () -> Unit,
+    onAccept: () -> Unit,
+) {
     val scroll = rememberScrollState()
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Palette.bg)
+            .systemBarsPadding()
             .verticalScroll(scroll)
             .padding(horizontal = 28.dp)
-            .padding(top = 48.dp, bottom = 28.dp),
+            .padding(top = 12.dp, bottom = 28.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.End,
+        ) {
+            LangChip(currentLang = currentLang, onCycleLang = onCycleLang)
+        }
+
+        Spacer(Modifier.height(20.dp))
         Box(
             modifier = Modifier
                 .size(88.dp)

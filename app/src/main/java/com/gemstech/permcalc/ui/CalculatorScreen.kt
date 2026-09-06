@@ -119,16 +119,7 @@ fun CalculatorScreen(currentLang: String, onCycleLang: () -> Unit) {
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text("PERMCALC", color = Palette.accent, fontSize = 14.sp, fontWeight = FontWeight.Bold)
-            Box(
-                modifier = Modifier
-                    .clip(RoundedCornerShape(8.dp))
-                    .background(Palette.surfaceVariant)
-                    .border(1.dp, Palette.outline, RoundedCornerShape(8.dp))
-                    .clickable(onClick = onCycleLang)
-                    .padding(horizontal = 12.dp, vertical = 6.dp),
-            ) {
-                Text(currentLang.uppercase(), color = Palette.dim, fontSize = 12.sp, fontWeight = FontWeight.Bold)
-            }
+            LangChip(currentLang = currentLang, onCycleLang = onCycleLang)
         }
 
         // Background-activity banner

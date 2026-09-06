@@ -1,6 +1,7 @@
 package com.gemstech.permcalc.ui
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,6 +21,34 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import com.gemstech.permcalc.ui.theme.Palette
+
+/**
+ * The language switcher. Shown in the calculator header and on the disclaimer,
+ * so someone who cannot read the current language can change it before they are
+ * asked to accept anything.
+ */
+@Composable
+fun LangChip(
+    currentLang: String,
+    onCycleLang: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Box(
+        modifier = modifier
+            .clip(RoundedCornerShape(8.dp))
+            .background(Palette.surfaceVariant)
+            .border(1.dp, Palette.outline, RoundedCornerShape(8.dp))
+            .clickable(onClick = onCycleLang)
+            .padding(horizontal = 12.dp, vertical = 6.dp),
+    ) {
+        Text(
+            currentLang.uppercase(),
+            color = Palette.dim,
+            fontSize = 12.sp,
+            fontWeight = FontWeight.Bold,
+        )
+    }
+}
 
 @Composable
 fun PrimaryButton(

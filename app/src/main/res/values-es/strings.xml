@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Common -->
+    <string name="common_grant">Conceder permiso</string>
+    <string name="common_skip">Omitir demo</string>
+    <string name="common_close">Cerrar</string>
+    <string name="common_understand">Entendido — continuar</string>
+    <string name="common_denied">Permiso denegado</string>
+    <string name="common_denied_msg">Has rechazado este permiso. Una app maliciosa de verdad te lo pediría una y otra vez hasta que cedieras.</string>
+    <string name="common_unknown">Desconocido</string>
+
+    <!-- Disclaimer -->
+    <string name="disclaimer_title">App educativa</string>
+    <string name="disclaimer_subtitle">Una demo práctica sobre privacidad</string>
+    <string name="disclaimer_body">PermCalc es una calculadora totalmente funcional. También es una lección de privacidad: concédele un permiso y te mostrará exactamente lo que una app puede hacer en el momento en que tocas \'Permitir\' — hacerte una foto, grabar audio, leer tus contactos o localizarte con precisión, a menudo sin que te des cuenta.\n\nCada demostración se ejecuta íntegramente en tu dispositivo. Nada se sube, se transmite ni se comparte con nadie — tampoco con el desarrollador.\n\nEl objetivo es sencillo: ayudarte a entender qué estás aceptando realmente, para que puedas decidir mejor en qué apps confías.</string>
+    <string name="disclaimer_note">Todo lo que se capture se queda en tu dispositivo y puedes borrarlo justo después.</string>
+
+    <!-- Permission buttons -->
+    <string name="perm_camera">Cámara</string>
+    <string name="perm_microphone">Micro</string>
+    <string name="perm_contacts">Contactos</string>
+    <string name="perm_location">Ubicación</string>
+    <string name="perm_storage">Archivos</string>
+
+    <!-- Shared info card titles -->
+    <string name="legit_title">Usos legítimos</string>
+    <string name="malicious_title">Cómo se abusa de esto</string>
+    <string name="perm_demos_label">⚠ DEMOS DE PERMISOS</string>
+
+    <!-- Background-activity banner -->
+    <string name="banner_title">Permiso concedido — trabajando en segundo plano</string>
+    <string name="camera_running">Has vuelto a tu calculadora, a lo tuyo. Mientras tanto, en segundo plano, la app te está haciendo una foto en silencio…</string>
+    <string name="microphone_running">Has vuelto a tu calculadora, a lo tuyo. Mientras tanto, en segundo plano, la app está grabando audio sin hacer ruido…</string>
+    <string name="contacts_running">Has vuelto a tu calculadora, a lo tuyo. Mientras tanto, en segundo plano, la app está leyendo toda tu lista de contactos…</string>
+    <string name="location_running">Has vuelto a tu calculadora, a lo tuyo. Mientras tanto, en segundo plano, la app está determinando exactamente dónde estás…</string>
+    <string name="storage_running">Has vuelto a tu calculadora, a lo tuyo. Mientras tanto, en segundo plano, la app está rastreando tus fotos y archivos…</string>
+
+    <!-- Camera -->
+    <string name="camera_info_title">Acceso a la cámara</string>
+    <string name="camera_info_subtitle">¿Qué puede hacer una app con tu cámara?</string>
+    <string name="camera_demo_capturing_front">Capturando con la cámara frontal…</string>
+    <string name="camera_demo_capturing_back">Capturando con la cámara trasera…</string>
+    <string name="camera_demo_saving">Guardando las fotos en tu galería…</string>
+    <string name="camera_reveal_title">Fotos guardadas en tu galería</string>
+    <string name="camera_reveal_desc">Acabo de hacer 2 fotos con tu cámara frontal y con la trasera, y las he guardado en tu galería. Abre la app de Fotos — están ahí ahora mismo.</string>
+    <string name="camera_reveal_front">Cámara frontal</string>
+    <string name="camera_reveal_back">Cámara trasera</string>
+    <string name="camera_warning">Lo hice en el momento en que tocaste \'Conceder permiso\' — y te lo he contado. Una app maliciosa hace exactamente lo mismo en silencio y luego sube tus fotos a un servidor remoto sin enseñarte nada.</string>
+    <string-array name="camera_legitimate">
+        <item>Videollamadas y reuniones</item>
+        <item>Escanear códigos QR y documentos</item>
+        <item>Funciones de realidad aumentada</item>
+    </string-array>
+    <string-array name="camera_malicious">
+        <item>Fotografiarte en silencio, sin flash ni sonido</item>
+        <item>Capturar tu entorno, tu casa o tu familia</item>
+        <item>Hacer fotos mientras la app está en segundo plano</item>
+    </string-array>
+
+    <!-- Microphone -->
+    <string name="microphone_info_title">Acceso al micrófono</string>
+    <string name="microphone_info_subtitle">¿Qué puede hacer una app con tu micrófono?</string>
+    <string name="microphone_demo_recording">Grabando audio…</string>
+    <string name="microphone_demo_saving">Guardando el archivo de audio…</string>
+    <string name="microphone_reveal_title">Grabación de audio guardada</string>
+    <string name="microphone_reveal_desc">He grabado %1$s de audio y lo he guardado en tu dispositivo. Pulsa reproducir abajo para oír exactamente lo que he capturado.</string>
+    <string name="microphone_reveal_file">Guardado como: permcalc_demo.m4a</string>
+    <string name="microphone_play">Reproducir grabación</string>
+    <string name="microphone_stop">Detener</string>
+    <string name="microphone_warning">Empecé a grabar en el instante en que tocaste \'Conceder permiso\'. Una app espía transmitiría este audio en directo a un servidor remoto mientras tú ves una interfaz perfectamente normal. Nunca lo sabrías.</string>
+    <string-array name="microphone_legitimate">
+        <item>Llamadas, reuniones y videochats</item>
+        <item>Notas de voz y dictado</item>
+        <item>Búsqueda por voz y asistentes virtuales</item>
+    </string-array>
+    <string-array name="microphone_malicious">
+        <item>Grabar tus conversaciones privadas</item>
+        <item>Escuchar palabras clave para crear un perfil publicitario</item>
+        <item>Transmitir audio en directo a servidores remotos</item>
+        <item>Grabar sin parar, sin que puedas detenerlo y sin ninguna señal de que está ocurriendo</item>
+    </string-array>
+
+    <!-- Contacts -->
+    <string name="contacts_info_title">Acceso a los contactos</string>
+    <string name="contacts_info_subtitle">¿Qué puede hacer una app con tus contactos?</string>
+    <string name="contacts_demo_loading">Leyendo tus contactos…</string>
+    <string name="contacts_reveal_title">Tus contactos (%1$d encontrados)</string>
+    <string name="contacts_reveal_desc">He encontrado a %1$d personas de tu vida — sus nombres, sus teléfonos y sus direcciones de correo. Todo esto está ahora en mis manos.</string>
+    <string name="contacts_reveal_no_contacts">No hay contactos en este dispositivo.</string>
+    <string name="contacts_more">…y %1$d más</string>
+    <string name="contacts_warning">Una app maliciosa subiría en silencio cada nombre, número y correo de esta lista a un servidor a los pocos segundos de concederle el permiso. Estos datos se venden a intermediarios de datos, a spammers y a anunciantes.</string>
+    <string-array name="contacts_legitimate">
+        <item>Autocompletar nombres al enviar mensajes</item>
+        <item>Encontrar amigos que usan la misma app</item>
+        <item>Sincronizar los contactos para tener copia de seguridad</item>
+    </string-array>
+    <string-array name="contacts_malicious">
+        <item>Trazar un mapa completo de tu red social</item>
+        <item>Vender tus contactos a spammers y a empresas de marketing</item>
+        <item>Enviar mensajes de phishing haciéndose pasar por ti</item>
+    </string-array>
+
+    <!-- Location -->
+    <string name="location_info_title">Acceso a la ubicación</string>
+    <string name="location_info_subtitle">¿Qué puede hacer una app con tu ubicación?</string>
+    <string name="location_demo_loading">Obteniendo tu ubicación…</string>
+    <string name="location_reveal_title">Tu ubicación actual</string>
+    <string name="location_reveal_address">Dirección</string>
+    <string name="location_reveal_coords">Coordenadas</string>
+    <string name="location_reveal_accuracy">Precisión: ±%1$d m</string>
+    <string name="location_label_street">Calle</string>
+    <string name="location_label_neighborhood">Barrio</string>
+    <string name="location_label_city">Ciudad / Municipio</string>
+    <string name="location_label_postal">Código postal</string>
+    <string name="location_label_district">Distrito / Comarca</string>
+    <string name="location_label_region">Región / Comunidad</string>
+    <string name="location_label_country">País</string>
+    <string name="location_label_dms">Coordenadas (DMS)</string>
+    <string name="location_label_altitude">Altitud</string>
+    <string name="location_label_accuracy">Precisión</string>
+    <string name="location_label_source">Fuente</string>
+    <string name="location_label_time">Hora de la lectura</string>
+    <string name="location_reveal_desc">Esto es exactamente dónde estás ahora mismo. Con el permiso de ubicación en segundo plano — que muchas apps piden — podría seguir tu posición 24 horas al día, 7 días a la semana.</string>
+    <string name="location_warning">Esta es solo tu posición actual. Con acceso en segundo plano, una app construye un historial completo de todos los sitios a los que vas: tu casa, la consulta de tu médico, el lugar donde rezas, el colegio de tus hijos. Estos datos valen una fortuna para los anunciantes — y para los acosadores.</string>
+    <string-array name="location_legitimate">
+        <item>Navegación, mapas e indicaciones</item>
+        <item>Encontrar restaurantes y servicios cercanos</item>
+        <item>El tiempo y las noticias locales</item>
+    </string-array>
+    <string-array name="location_malicious">
+        <item>Seguir tus movimientos y tus rutinas 24/7</item>
+        <item>Identificar tu casa, tu trabajo y los lugares donde rezas</item>
+        <item>Vender tu historial de ubicaciones a anunciantes o acosadores</item>
+    </string-array>
+
+    <!-- Storage -->
+    <string name="storage_info_title">Acceso al almacenamiento y a los archivos</string>
+    <string name="storage_info_subtitle">¿Qué puede hacer una app con tu almacenamiento?</string>
+    <string name="storage_demo_loading">Analizando tus archivos…</string>
+    <string name="storage_reveal_title">Tus archivos (%1$d elementos encontrados)</string>
+    <string name="storage_reveal_desc">He encontrado %1$d fotos y vídeos en tu dispositivo. Puedo leer los nombres de archivo, los metadatos y el contenido de cada uno de ellos.</string>
+    <string name="storage_reveal_no_media">No se han encontrado archivos en este dispositivo.</string>
+    <string name="storage_reveal_recent_label">Elementos recientes:</string>
+    <string name="storage_warning">Cada foto que has hecho, cada documento que has descargado, cada captura de pantalla — todo legible por cualquier app a la que des acceso al almacenamiento. Extractos bancarios, escaneos de tu documento de identidad, fotos privadas, contraseñas apuntadas en notas. Todo.</string>
+    <string-array name="storage_legitimate">
+        <item>Acceder a las fotos y vídeos que quieres editar</item>
+        <item>Guardar los archivos que descargas</item>
+        <item>Importar los documentos que eliges</item>
+    </string-array>
+    <string-array name="storage_malicious">
+        <item>Leer todas tus fotos, vídeos y documentos</item>
+        <item>Encontrar extractos bancarios y escaneos de documentos</item>
+        <item>Acceder a capturas de pantalla y mensajes privados</item>
+    </string-array>
+</resources>

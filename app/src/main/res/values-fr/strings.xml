@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Common -->
+    <string name="common_grant">Accorder l\'autorisation</string>
+    <string name="common_skip">Passer la démo</string>
+    <string name="common_close">Fermer</string>
+    <string name="common_understand">J\'ai compris — continuer</string>
+    <string name="common_denied">Autorisation refusée</string>
+    <string name="common_denied_msg">Tu as refusé cette autorisation. Une véritable application malveillante te la redemanderait encore et encore jusqu\'à ce que tu cèdes.</string>
+    <string name="common_unknown">Inconnu</string>
+
+    <!-- Disclaimer -->
+    <string name="disclaimer_title">Application éducative</string>
+    <string name="disclaimer_subtitle">Une démo concrète sur la vie privée</string>
+    <string name="disclaimer_body">PermCalc est une calculatrice parfaitement fonctionnelle. C\'est aussi une leçon sur la vie privée : accorde-lui une autorisation et elle te montrera exactement ce qu\'une application peut faire à l\'instant où tu appuies sur \'Autoriser\' — prendre une photo, enregistrer du son, lire tes contacts ou te localiser précisément, souvent sans que tu t\'en aperçoives.\n\nChaque démonstration se déroule entièrement sur ton appareil. Rien n\'est envoyé, transmis ni partagé avec qui que ce soit — pas même avec le développeur.\n\nL\'objectif est simple : t\'aider à comprendre ce que tu acceptes vraiment, pour que tu puisses mieux choisir les applications auxquelles tu fais confiance.</string>
+    <string name="disclaimer_note">Tout ce qui est capturé reste sur ton appareil et peut être supprimé juste après.</string>
+
+    <!-- Permission buttons -->
+    <string name="perm_camera">Caméra</string>
+    <string name="perm_microphone">Micro</string>
+    <string name="perm_contacts">Contacts</string>
+    <string name="perm_location">Position</string>
+    <string name="perm_storage">Fichiers</string>
+
+    <!-- Shared info card titles -->
+    <string name="legit_title">Usages légitimes</string>
+    <string name="malicious_title">Comment on en abuse</string>
+    <string name="perm_demos_label">⚠ DÉMOS D\'AUTORISATIONS</string>
+
+    <!-- Background-activity banner -->
+    <string name="banner_title">Autorisation accordée — travail en arrière-plan</string>
+    <string name="camera_running">Tu es retourné à ta calculatrice, tranquillement. Pendant ce temps, en arrière-plan, l\'application te prend en photo en silence…</string>
+    <string name="microphone_running">Tu es retourné à ta calculatrice, tranquillement. Pendant ce temps, en arrière-plan, l\'application enregistre discrètement du son…</string>
+    <string name="contacts_running">Tu es retourné à ta calculatrice, tranquillement. Pendant ce temps, en arrière-plan, l\'application lit tout ton répertoire…</string>
+    <string name="location_running">Tu es retourné à ta calculatrice, tranquillement. Pendant ce temps, en arrière-plan, l\'application détermine exactement où tu te trouves…</string>
+    <string name="storage_running">Tu es retourné à ta calculatrice, tranquillement. Pendant ce temps, en arrière-plan, l\'application parcourt tes photos et tes fichiers…</string>
+
+    <!-- Camera -->
+    <string name="camera_info_title">Accès à la caméra</string>
+    <string name="camera_info_subtitle">Que peut faire une application avec ta caméra ?</string>
+    <string name="camera_demo_capturing_front">Capture avec la caméra avant…</string>
+    <string name="camera_demo_capturing_back">Capture avec la caméra arrière…</string>
+    <string name="camera_demo_saving">Enregistrement des photos dans ta galerie…</string>
+    <string name="camera_reveal_title">Photos enregistrées dans ta galerie</string>
+    <string name="camera_reveal_desc">Je viens de prendre 2 photos avec ta caméra avant et ta caméra arrière, et je les ai enregistrées dans ta galerie. Ouvre ton application Photos — elles y sont déjà.</string>
+    <string name="camera_reveal_front">Caméra avant</string>
+    <string name="camera_reveal_back">Caméra arrière</string>
+    <string name="camera_warning">Je l\'ai fait à l\'instant où tu as appuyé sur \'Accorder l\'autorisation\' — et je te l\'ai dit. Une application malveillante fait exactement la même chose en silence, puis envoie tes photos vers un serveur distant sans jamais rien te montrer.</string>
+    <string-array name="camera_legitimate">
+        <item>Appels vidéo et réunions</item>
+        <item>Scanner des QR codes et des documents</item>
+        <item>Fonctions de réalité augmentée</item>
+    </string-array>
+    <string-array name="camera_malicious">
+        <item>Te photographier en silence, sans flash ni son</item>
+        <item>Capturer ton environnement, ton logement ou ta famille</item>
+        <item>Prendre des photos pendant que l\'application est en arrière-plan</item>
+    </string-array>
+
+    <!-- Microphone -->
+    <string name="microphone_info_title">Accès au microphone</string>
+    <string name="microphone_info_subtitle">Que peut faire une application avec ton microphone ?</string>
+    <string name="microphone_demo_recording">Enregistrement du son…</string>
+    <string name="microphone_demo_saving">Enregistrement du fichier audio…</string>
+    <string name="microphone_reveal_title">Enregistrement audio sauvegardé</string>
+    <string name="microphone_reveal_desc">J\'ai enregistré %1$s de son et je l\'ai sauvegardé sur ton appareil. Appuie sur lecture ci-dessous pour entendre exactement ce que j\'ai capté.</string>
+    <string name="microphone_reveal_file">Enregistré sous : permcalc_demo.m4a</string>
+    <string name="microphone_play">Écouter l\'enregistrement</string>
+    <string name="microphone_stop">Arrêter</string>
+    <string name="microphone_warning">J\'ai commencé à enregistrer à l\'instant où tu as appuyé sur \'Accorder l\'autorisation\'. Un logiciel espion diffuserait ce son en direct vers un serveur distant pendant que tu vois une interface parfaitement normale. Tu ne le saurais jamais.</string>
+    <string-array name="microphone_legitimate">
+        <item>Appels, réunions et discussions vidéo</item>
+        <item>Mémos vocaux et dictée</item>
+        <item>Recherche vocale et assistants virtuels</item>
+    </string-array>
+    <string-array name="microphone_malicious">
+        <item>Enregistrer tes conversations privées</item>
+        <item>Repérer des mots-clés pour bâtir un profil publicitaire</item>
+        <item>Diffuser le son en direct vers des serveurs distants</item>
+        <item>Enregistrer sans interruption, sans que tu puisses l\'arrêter et sans aucun signe que cela se produit</item>
+    </string-array>
+
+    <!-- Contacts -->
+    <string name="contacts_info_title">Accès aux contacts</string>
+    <string name="contacts_info_subtitle">Que peut faire une application avec tes contacts ?</string>
+    <string name="contacts_demo_loading">Lecture de tes contacts…</string>
+    <string name="contacts_reveal_title">Tes contacts (%1$d trouvés)</string>
+    <string name="contacts_reveal_desc">J\'ai trouvé %1$d personnes de ton entourage — leurs noms, leurs numéros de téléphone et leurs adresses e-mail. Tout cela est maintenant entre mes mains.</string>
+    <string name="contacts_reveal_no_contacts">Aucun contact sur cet appareil.</string>
+    <string name="contacts_more">…et %1$d de plus</string>
+    <string name="contacts_warning">Une application malveillante enverrait discrètement chaque nom, numéro et e-mail de cette liste vers un serveur dans les secondes qui suivent l\'autorisation. Ces données sont revendues à des courtiers en données, à des spammeurs et à des annonceurs.</string>
+    <string-array name="contacts_legitimate">
+        <item>Compléter les noms automatiquement à l\'envoi d\'un message</item>
+        <item>Retrouver des amis qui utilisent la même application</item>
+        <item>Synchroniser les contacts pour la sauvegarde</item>
+    </string-array>
+    <string-array name="contacts_malicious">
+        <item>Dresser la carte complète de ton réseau social</item>
+        <item>Revendre tes contacts à des spammeurs et à des publicitaires</item>
+        <item>Envoyer des messages de phishing en se faisant passer pour toi</item>
+    </string-array>
+
+    <!-- Location -->
+    <string name="location_info_title">Accès à la position</string>
+    <string name="location_info_subtitle">Que peut faire une application avec ta position ?</string>
+    <string name="location_demo_loading">Récupération de ta position…</string>
+    <string name="location_reveal_title">Ta position actuelle</string>
+    <string name="location_reveal_address">Adresse</string>
+    <string name="location_reveal_coords">Coordonnées</string>
+    <string name="location_reveal_accuracy">Précision : ±%1$d m</string>
+    <string name="location_label_street">Rue</string>
+    <string name="location_label_neighborhood">Quartier</string>
+    <string name="location_label_city">Ville / Commune</string>
+    <string name="location_label_postal">Code postal</string>
+    <string name="location_label_district">Département / Arrondissement</string>
+    <string name="location_label_region">Région</string>
+    <string name="location_label_country">Pays</string>
+    <string name="location_label_dms">Coordonnées (DMS)</string>
+    <string name="location_label_altitude">Altitude</string>
+    <string name="location_label_accuracy">Précision</string>
+    <string name="location_label_source">Source</string>
+    <string name="location_label_time">Heure du relevé</string>
+    <string name="location_reveal_desc">Voici exactement où tu te trouves en ce moment. Avec l\'autorisation de localisation en arrière-plan — que beaucoup d\'applications demandent — je pourrais suivre ta position 24 heures sur 24, 7 jours sur 7.</string>
+    <string name="location_warning">Ce n\'est que ta position actuelle. Avec un accès en arrière-plan, une application construit l\'historique complet de tous tes déplacements : ton domicile, le cabinet de ton médecin, le lieu où tu pries, l\'école de tes enfants. Ces données valent une fortune pour les annonceurs — et pour les harceleurs.</string>
+    <string-array name="location_legitimate">
+        <item>Navigation, cartes et itinéraires</item>
+        <item>Trouver des restaurants et des services à proximité</item>
+        <item>Météo et actualités locales</item>
+    </string-array>
+    <string-array name="location_malicious">
+        <item>Suivre tes déplacements et tes habitudes 24h/24</item>
+        <item>Identifier ton domicile, ton lieu de travail et les lieux où tu pries</item>
+        <item>Revendre l\'historique de tes positions à des annonceurs ou à des harceleurs</item>
+    </string-array>
+
+    <!-- Storage -->
+    <string name="storage_info_title">Accès au stockage et aux médias</string>
+    <string name="storage_info_subtitle">Que peut faire une application avec ton stockage ?</string>
+    <string name="storage_demo_loading">Analyse de tes médias…</string>
+    <string name="storage_reveal_title">Tes médias (%1$d éléments trouvés)</string>
+    <string name="storage_reveal_desc">J\'ai trouvé %1$d photos et vidéos sur ton appareil. Je peux lire les noms de fichiers, les métadonnées et le contenu de chacun d\'eux.</string>
+    <string name="storage_reveal_no_media">Aucun média sur cet appareil.</string>
+    <string name="storage_reveal_recent_label">Éléments récents :</string>
+    <string name="storage_warning">Chaque photo que tu as prise, chaque document que tu as téléchargé, chaque capture d\'écran — tout est lisible par n\'importe quelle application à laquelle tu accordes l\'accès au stockage. Relevés bancaires, scans de pièces d\'identité, photos privées, mots de passe notés dans une note. Tout.</string>
+    <string-array name="storage_legitimate">
+        <item>Accéder aux photos et vidéos que tu veux retoucher</item>
+        <item>Enregistrer les fichiers que tu télécharges</item>
+        <item>Importer les documents que tu choisis</item>
+    </string-array>
+    <string-array name="storage_malicious">
+        <item>Lire toutes tes photos, vidéos et documents</item>
+        <item>Trouver des relevés bancaires et des scans de pièces d\'identité</item>
+        <item>Accéder à des captures d\'écran et à des messages privés</item>
+    </string-array>
+</resources>

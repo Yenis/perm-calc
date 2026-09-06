@@ -10,14 +10,14 @@
 
     <string name="disclaimer_title">Edukativna aplikacija</string>
     <string name="disclaimer_subtitle">Praktična demonstracija privatnosti</string>
-    <string name="disclaimer_body">PermCalc je potpuno funkcionalan kalkulator. Ujedno je i lekcija o privatnosti: kada mu daš dozvolu, pokazat će ti tačno šta aplikacija može uraditi u trenutku kada dodirneš \'Dozvoli\' — snimiti fotografiju, snimati zvuk, čitati tvoje kontakte ili odrediti tvoju lokaciju, često a da to i ne primijetiš.\n\nSvaka demonstracija se odvija isključivo na tvom uređaju. Ništa se ne prenosi, ne šalje niti dijeli — uključujući ni programera.\n\nCilj je jednostavan: pomoći ti da razumiješ na šta zapravo pristaješ, kako bi mogao/la donositi bolje odluke o tome kojim aplikacijama vjeruješ.</string>
+    <string name="disclaimer_body">PermCalc je potpuno funkcionalan kalkulator. Ujedno je i lekcija o privatnosti: kada mu daš dozvolu, pokazat će ti tačno šta aplikacija može uraditi u trenutku kada dodirneš \'Dozvoli\' — snimiti fotografiju, snimati zvuk, čitati tvoje kontakte ili odrediti tvoju lokaciju, često a da to i ne primijetiš.\n\nSvaka demonstracija se odvija isključivo na tvom uređaju. Ništa se ne prenosi, ne šalje niti dijeli ni sa kim — pa ni sa programerom.\n\nCilj je jednostavan: pomoći ti da razumiješ na šta zapravo pristaješ, kako bi mogao/la donositi bolje odluke o tome kojim aplikacijama vjeruješ.</string>
     <string name="disclaimer_note">Sve što se snimi ostaje na tvom uređaju i može se obrisati odmah nakon.</string>
 
     <string name="perm_camera">Kamera</string>
     <string name="perm_microphone">Mikrofon</string>
     <string name="perm_contacts">Kontakti</string>
     <string name="perm_location">Lokacija</string>
-    <string name="perm_storage">Pohrana</string>
+    <string name="perm_storage">Memorija</string>
 
     <string name="legit_title">Legitimna upotreba</string>
     <string name="malicious_title">Kako se zloupotrebljava</string>
@@ -33,20 +33,20 @@
     <string name="camera_info_title">Pristup kameri</string>
     <string name="camera_info_subtitle">Šta aplikacija može uraditi s tvojom kamerom?</string>
     <string name="camera_demo_capturing_front">Snimanje prednjom kamerom…</string>
-    <string name="camera_demo_capturing_back">Snimanje stražnjom kamerom…</string>
+    <string name="camera_demo_capturing_back">Snimanje zadnjom kamerom…</string>
     <string name="camera_demo_saving">Čuvanje fotografija u galeriju…</string>
     <string name="camera_reveal_title">Fotografije sačuvane u tvoju galeriju</string>
-    <string name="camera_reveal_desc">Upravo sam napravio/la 2 fotografije koristeći tvoju prednju i stražnju kameru i sačuvao/la ih u tvoju galeriju. Otvori aplikaciju Fotografije — one su već tamo.</string>
+    <string name="camera_reveal_desc">Upravo sam napravio/la 2 fotografije koristeći tvoju prednju i zadnju kameru i sačuvao/la ih u tvoju galeriju. Otvori aplikaciju Fotografije — one su već tamo.</string>
     <string name="camera_reveal_front">Prednja kamera</string>
-    <string name="camera_reveal_back">Stražnja kamera</string>
-    <string name="camera_warning">Uradio/la sam ovo u trenutku kada si dodirnuo/la \'Dozvoli pristup\' — i obavijestio/la sam te o tome. Zlonamjerna aplikacija radi potpuno isto, ali tiho, a zatim šalje tvoje fotografije na udaljeni server bez da ti ikad pokaže bilo šta.</string>
+    <string name="camera_reveal_back">Zadnja kamera</string>
+    <string name="camera_warning">Uradio/la sam ovo u trenutku kada si dodirnuo/la \'Dozvoli pristup\' — i obavijestio/la sam te o tome. Zlonamjerna aplikacija radi potpuno isto, ali tiho, a zatim šalje tvoje fotografije na udaljeni server, a da ti pri tome ništa ne pokaže.</string>
     <string-array name="camera_legitimate">
         <item>Video pozivi i sastanci</item>
         <item>Skeniranje QR kodova i dokumenata</item>
         <item>Augmented reality funkcije</item>
     </string-array>
     <string-array name="camera_malicious">
-        <item>Tajno te fotografirati — bez bljeska ili zvuka</item>
+        <item>Tajno te fotografisati — bez blica ili zvuka</item>
         <item>Snimiti tvoj dom ili porodicu</item>
         <item>Praviti fotografije dok aplikacija radi u pozadini</item>
     </string-array>
@@ -60,11 +60,11 @@
     <string name="microphone_reveal_file">Sačuvano kao: permcalc_demo.m4a</string>
     <string name="microphone_play">Pusti snimak</string>
     <string name="microphone_stop">Zaustavi</string>
-    <string name="microphone_warning">Počeo/la sam snimati u trenutku kada si dodirnuo/la \'Dozvoli pristup\'. Špijunska aplikacija bi streamovala ovaj zvuk uživo na udaljeni server dok ti vidiš potpuno normalno sučelje. Nikad ne bi znao/la.</string>
+    <string name="microphone_warning">Počeo/la sam snimati u trenutku kada si dodirnuo/la \'Dozvoli pristup\'. Špijunska aplikacija bi streamovala ovaj zvuk uživo na udaljeni server dok ti vidiš potpuno normalan interfejs. Nikad ne bi znao/la.</string>
     <string-array name="microphone_legitimate">
-        <item>Glasovni pozivi, sastanci i video ćaskanje</item>
+        <item>Glasovni pozivi, sastanci i video razgovori</item>
         <item>Glasovne bilješke i diktiranje</item>
-        <item>Glasovna pretraga i virtualni asistenti</item>
+        <item>Glasovna pretraga i virtuelni asistenti</item>
     </string-array>
     <string-array name="microphone_malicious">
         <item>Snimanje tvojih privatnih razgovora</item>
@@ -84,17 +84,17 @@
     <string-array name="contacts_legitimate">
         <item>Automatsko popunjavanje imena kontakata pri slanju poruka</item>
         <item>Pronalaženje prijatelja koji koriste istu aplikaciju</item>
-        <item>Sinkronizacija kontakata za backup</item>
+        <item>Sinhronizacija kontakata za backup</item>
     </string-array>
     <string-array name="contacts_malicious">
         <item>Izrada kompletne mape tvoje društvene mreže</item>
-        <item>Prodaja tvojih kontakata spamdžijama i marketarima</item>
+        <item>Prodaja tvojih kontakata spamdžijama i marketinškim agencijama</item>
         <item>Slanje phishing poruka koje se predstavljaju kao ti</item>
     </string-array>
 
     <string name="location_info_title">Pristup lokaciji</string>
     <string name="location_info_subtitle">Šta aplikacija može uraditi s tvojom lokacijom?</string>
-    <string name="location_demo_loading">Dohvaćanje tvoje lokacije…</string>
+    <string name="location_demo_loading">Određivanje tvoje lokacije…</string>
     <string name="location_reveal_title">Tvoja trenutna lokacija</string>
     <string name="location_reveal_address">Adresa</string>
     <string name="location_reveal_coords">Koordinate</string>
@@ -110,9 +110,9 @@
     <string name="location_label_altitude">Nadmorska visina</string>
     <string name="location_label_accuracy">Tačnost</string>
     <string name="location_label_source">Izvor</string>
-    <string name="location_label_time">Vrijeme</string>
+    <string name="location_label_time">Vrijeme očitanja</string>
     <string name="location_reveal_desc">Evo tačno gdje se nalaziš upravo sada. Sa dozvolom lokacije u pozadini — koju mnoge aplikacije traže — mogao/la bih pratiti tvoju poziciju 24 sata dnevno, 7 dana sedmično.</string>
-    <string name="location_warning">Ovo je samo tvoja trenutna pozicija. Sa pristupom u pozadini, aplikacija gradi kompletnu historiju svuda gdje ideš: tvoj dom, tvoj doktor, tvoje mjesto bogosluženja, škola tvoje djece. Ovi podaci vrijede bogatstvo oglašivačima — i stalkersima.</string>
+    <string name="location_warning">Ovo je samo tvoja trenutna pozicija. Sa pristupom u pozadini, aplikacija gradi kompletnu historiju svuda gdje ideš: tvoj dom, tvoj doktor, mjesto gdje se moliš, škola tvoje djece. Ovi podaci vrijede bogatstvo oglašivačima — i uhodama.</string>
     <string-array name="location_legitimate">
         <item>Navigacija, mape i upute</item>
         <item>Pronalaženje restorana i usluga u blizini</item>
@@ -121,20 +121,20 @@
     <string-array name="location_malicious">
         <item>Praćenje tvojih kretanja i navika 24/7</item>
         <item>Identifikacija tvog doma, radnog mjesta i vjerskih mjesta</item>
-        <item>Prodaja historije tvoje lokacije oglašivačima ili stalkersima</item>
+        <item>Prodaja historije tvoje lokacije oglašivačima ili uhodama</item>
     </string-array>
 
-    <string name="storage_info_title">Pristup pohrani i medijima</string>
-    <string name="storage_info_subtitle">Šta aplikacija može uraditi s tvojom pohranom?</string>
+    <string name="storage_info_title">Pristup memoriji i medijima</string>
+    <string name="storage_info_subtitle">Šta aplikacija može uraditi s tvojom memorijom?</string>
     <string name="storage_demo_loading">Pretraživanje medija…</string>
     <string name="storage_reveal_title">Tvoji mediji (%1$d pronađenih stavki)</string>
     <string name="storage_reveal_desc">Pronašao/la sam %1$d fotografija i videa na tvom uređaju. Mogu čitati nazive fajlova, metapodatke i sadržaj svakog od njih.</string>
     <string name="storage_reveal_no_media">Nema medija na ovom uređaju.</string>
     <string name="storage_reveal_recent_label">Nedavne stavke:</string>
-    <string name="storage_warning">Svaka fotografija koju si ikad napravio/la, svaki preuzeti dokument, svaki screenshot — sve čitljivo svakoj aplikaciji kojoj daš pristup pohrani. Izvodi s računa, skenovi dokumenata, privatne fotografije, lozinke upisane u bilješke. Sve od toga.</string>
+    <string name="storage_warning">Svaka fotografija koju si ikad napravio/la, svaki preuzeti dokument, svaki screenshot — sve čitljivo svakoj aplikaciji kojoj daš pristup memoriji. Izvodi s računa, skenovi dokumenata, privatne fotografije, lozinke upisane u bilješke. Sve od toga.</string>
     <string-array name="storage_legitimate">
         <item>Pristup fotografijama i videima koje želiš uređivati</item>
-        <item>Čuvanje fajlova koje preuzimeš</item>
+        <item>Čuvanje fajlova koje preuzmeš</item>
         <item>Uvoz dokumenata koje odabereš</item>
     </string-array>
     <string-array name="storage_malicious">

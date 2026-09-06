@@ -41,18 +41,27 @@ class MainActivity : ComponentActivity() {
 
             PermCalcTheme {
                 CompositionLocalProvider(LocalLocalizedContext provides localized) {
+                    // Shared by both screens: the switcher is on the disclaimer
+                    // too, so someone who cannot read the current language can
+                    // change it before being asked to accept anything.
+                    val cycleLang = {
+                        val idx = SUPPORTED_LANGS.indexOf(lang)
+                        val next = SUPPORTED_LANGS[(idx + 1) % SUPPORTED_LANGS.size]
+                        lang = next
+                        prefs.edit().putString(KEY_LANG, next).apply()
+                    }
+
                     if (accepted) {
                         CalculatorScreen(
                             currentLang = lang,
-                            onCycleLang = {
-                                val idx = SUPPORTED_LANGS.indexOf(lang)
-                                val next = SUPPORTED_LANGS[(idx + 1) % SUPPORTED_LANGS.size]
-                                lang = next
-                                prefs.edit().putString(KEY_LANG, next).apply()
-                            },
+                            onCycleLang = cycleLang,
                         )
                     } else {
-                        DisclaimerScreen(onAccept = { accepted = true })
+                        DisclaimerScreen(
+                            currentLang = lang,
+                            onCycleLang = cycleLang,
+                            onAccept = { accepted = true },
+                        )
                     }
                 }
             }

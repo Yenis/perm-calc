@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Common -->
+    <string name="common_grant">Дать разрешение</string>
+    <string name="common_skip">Пропустить демо</string>
+    <string name="common_close">Закрыть</string>
+    <string name="common_understand">Понятно — продолжить</string>
+    <string name="common_denied">Разрешение отклонено</string>
+    <string name="common_denied_msg">Ты отклонил это разрешение. Настоящее вредоносное приложение спрашивало бы снова и снова, пока ты не сдашься.</string>
+    <string name="common_unknown">Неизвестно</string>
+
+    <!-- Disclaimer -->
+    <string name="disclaimer_title">Обучающее приложение</string>
+    <string name="disclaimer_subtitle">Наглядная демонстрация приватности</string>
+    <string name="disclaimer_body">PermCalc — это полностью рабочий калькулятор. И одновременно урок о приватности: дай ему разрешение, и он покажет, что именно приложение может сделать в тот момент, когда ты нажимаешь \'Разрешить\' — снять фото, записать звук, прочитать твои контакты или определить, где ты находишься, часто так, что ты этого даже не заметишь.\n\nКаждая демонстрация выполняется целиком на твоём устройстве. Ничего не загружается, не передаётся и никому не отправляется — в том числе разработчику.\n\nЦель проста: помочь тебе понять, на что ты на самом деле соглашаешься, чтобы ты мог осознаннее решать, каким приложениям доверять.</string>
+    <string name="disclaimer_note">Всё, что было снято или записано, остаётся на твоём устройстве, и это можно сразу удалить.</string>
+
+    <!-- Permission buttons -->
+    <string name="perm_camera">Камера</string>
+    <string name="perm_microphone">Микрофон</string>
+    <string name="perm_contacts">Контакты</string>
+    <string name="perm_location">Геоданные</string>
+    <string name="perm_storage">Файлы</string>
+
+    <!-- Shared info card titles -->
+    <string name="legit_title">Законное применение</string>
+    <string name="malicious_title">Как этим злоупотребляют</string>
+    <string name="perm_demos_label">⚠ ДЕМО РАЗРЕШЕНИЙ</string>
+
+    <!-- Background-activity banner -->
+    <string name="banner_title">Разрешение получено — работа в фоне</string>
+    <string name="camera_running">Ты вернулся к калькулятору и занимаешься своими делами. А тем временем, в фоне, приложение молча снимает тебя на камеру…</string>
+    <string name="microphone_running">Ты вернулся к калькулятору и занимаешься своими делами. А тем временем, в фоне, приложение тихо записывает звук…</string>
+    <string name="contacts_running">Ты вернулся к калькулятору и занимаешься своими делами. А тем временем, в фоне, приложение читает весь твой список контактов…</string>
+    <string name="location_running">Ты вернулся к калькулятору и занимаешься своими делами. А тем временем, в фоне, приложение определяет, где именно ты находишься…</string>
+    <string name="storage_running">Ты вернулся к калькулятору и занимаешься своими делами. А тем временем, в фоне, приложение просматривает твои фото и файлы…</string>
+
+    <!-- Camera -->
+    <string name="camera_info_title">Доступ к камере</string>
+    <string name="camera_info_subtitle">Что приложение может сделать с твоей камерой?</string>
+    <string name="camera_demo_capturing_front">Съёмка на фронтальную камеру…</string>
+    <string name="camera_demo_capturing_back">Съёмка на основную камеру…</string>
+    <string name="camera_demo_saving">Сохранение фото в галерею…</string>
+    <string name="camera_reveal_title">Фото сохранены в твою галерею</string>
+    <string name="camera_reveal_desc">Я только что сделал 2 снимка твоей фронтальной и основной камерой и сохранил их в галерею. Открой приложение \'Фото\' — они уже там.</string>
+    <string name="camera_reveal_front">Фронтальная камера</string>
+    <string name="camera_reveal_back">Основная камера</string>
+    <string name="camera_warning">Я сделал это в тот момент, когда ты нажал \'Дать разрешение\' — и сказал тебе об этом. Вредоносное приложение делает ровно то же самое молча, а затем отправляет твои фотографии на удалённый сервер, ничего тебе не показывая.</string>
+    <string-array name="camera_legitimate">
+        <item>Видеозвонки и совещания</item>
+        <item>Сканирование QR-кодов и документов</item>
+        <item>Функции дополненной реальности</item>
+    </string-array>
+    <string-array name="camera_malicious">
+        <item>Снимать тебя незаметно — без вспышки и звука</item>
+        <item>Снимать твоё жильё, обстановку и близких</item>
+        <item>Делать фото, пока приложение работает в фоне</item>
+    </string-array>
+
+    <!-- Microphone -->
+    <string name="microphone_info_title">Доступ к микрофону</string>
+    <string name="microphone_info_subtitle">Что приложение может сделать с твоим микрофоном?</string>
+    <string name="microphone_demo_recording">Запись звука…</string>
+    <string name="microphone_demo_saving">Сохранение аудиофайла…</string>
+    <string name="microphone_reveal_title">Аудиозапись сохранена</string>
+    <string name="microphone_reveal_desc">Я записал %1$s звука и сохранил на твоём устройстве. Нажми кнопку воспроизведения ниже, чтобы услышать, что именно я записал.</string>
+    <string name="microphone_reveal_file">Сохранено как: permcalc_demo.m4a</string>
+    <string name="microphone_play">Воспроизвести запись</string>
+    <string name="microphone_stop">Остановить</string>
+    <string name="microphone_warning">Я начал запись в тот момент, когда ты нажал \'Дать разрешение\'. Шпионское приложение передавало бы этот звук в реальном времени на удалённый сервер, пока ты видишь совершенно обычный интерфейс. Ты бы никогда об этом не узнал.</string>
+    <string-array name="microphone_legitimate">
+        <item>Звонки, совещания и видеочаты</item>
+        <item>Голосовые заметки и диктовка</item>
+        <item>Голосовой поиск и виртуальные ассистенты</item>
+    </string-array>
+    <string-array name="microphone_malicious">
+        <item>Записывать твои личные разговоры</item>
+        <item>Слушать ключевые слова, чтобы собрать рекламный профиль</item>
+        <item>Передавать звук в реальном времени на удалённые серверы</item>
+        <item>Писать без остановки — так, что это не отключить и никак не заметить</item>
+    </string-array>
+
+    <!-- Contacts -->
+    <string name="contacts_info_title">Доступ к контактам</string>
+    <string name="contacts_info_subtitle">Что приложение может сделать с твоими контактами?</string>
+    <string name="contacts_demo_loading">Чтение твоих контактов…</string>
+    <string name="contacts_reveal_title">Твои контакты (найдено: %1$d)</string>
+    <string name="contacts_reveal_desc">Я нашёл %1$d человек из твоей жизни — их имена, номера телефонов и адреса электронной почты. Всё это теперь у меня.</string>
+    <string name="contacts_reveal_no_contacts">На этом устройстве нет контактов.</string>
+    <string name="contacts_more">…и ещё %1$d</string>
+    <string name="contacts_warning">Вредоносное приложение через считаные секунды после выдачи разрешения молча отправило бы каждое имя, номер и адрес из этого списка на сервер. Эти данные продают брокерам данных, спамерам и рекламодателям.</string>
+    <string-array name="contacts_legitimate">
+        <item>Подставлять имена контактов при отправке сообщений</item>
+        <item>Находить друзей, которые пользуются тем же приложением</item>
+        <item>Синхронизировать контакты для резервной копии</item>
+    </string-array>
+    <string-array name="contacts_malicious">
+        <item>Построить полную карту твоего круга общения</item>
+        <item>Продать твои контакты спамерам и рекламщикам</item>
+        <item>Рассылать фишинговые сообщения от твоего имени</item>
+    </string-array>
+
+    <!-- Location -->
+    <string name="location_info_title">Доступ к местоположению</string>
+    <string name="location_info_subtitle">Что приложение может сделать с твоим местоположением?</string>
+    <string name="location_demo_loading">Определение твоего местоположения…</string>
+    <string name="location_reveal_title">Твоё текущее местоположение</string>
+    <string name="location_reveal_address">Адрес</string>
+    <string name="location_reveal_coords">Координаты</string>
+    <string name="location_reveal_accuracy">Точность: ±%1$d м</string>
+    <string name="location_label_street">Улица</string>
+    <string name="location_label_neighborhood">Район</string>
+    <string name="location_label_city">Город / Населённый пункт</string>
+    <string name="location_label_postal">Почтовый индекс</string>
+    <string name="location_label_district">Округ / Муниципалитет</string>
+    <string name="location_label_region">Регион / Область</string>
+    <string name="location_label_country">Страна</string>
+    <string name="location_label_dms">Координаты (DMS)</string>
+    <string name="location_label_altitude">Высота над уровнем моря</string>
+    <string name="location_label_accuracy">Точность</string>
+    <string name="location_label_source">Источник</string>
+    <string name="location_label_time">Время определения</string>
+    <string name="location_reveal_desc">Вот где ты находишься прямо сейчас. С разрешением на доступ к геоданным в фоне — а его запрашивают многие приложения — я мог бы отслеживать тебя круглосуточно, семь дней в неделю.</string>
+    <string name="location_warning">Это лишь твоя текущая точка. С фоновым доступом приложение собирает полную историю твоих перемещений: дом, кабинет врача, место, где ты молишься, школа твоих детей. Эти данные стоят целое состояние для рекламодателей — и для преследователей.</string>
+    <string-array name="location_legitimate">
+        <item>Навигация, карты и маршруты</item>
+        <item>Поиск ресторанов и услуг поблизости</item>
+        <item>Местная погода и новости</item>
+    </string-array>
+    <string-array name="location_malicious">
+        <item>Отслеживать твои перемещения и привычки круглосуточно</item>
+        <item>Определить твой дом, работу и места, где ты молишься</item>
+        <item>Продавать историю твоих перемещений рекламодателям или преследователям</item>
+    </string-array>
+
+    <!-- Storage -->
+    <string name="storage_info_title">Доступ к хранилищу и медиафайлам</string>
+    <string name="storage_info_subtitle">Что приложение может сделать с твоим хранилищем?</string>
+    <string name="storage_demo_loading">Сканирование твоих медиафайлов…</string>
+    <string name="storage_reveal_title">Твои медиафайлы (найдено: %1$d)</string>
+    <string name="storage_reveal_desc">Я нашёл %1$d фото и видео на твоём устройстве. Я могу прочитать имена файлов, метаданные и содержимое каждого из них.</string>
+    <string name="storage_reveal_no_media">На этом устройстве нет медиафайлов.</string>
+    <string name="storage_reveal_recent_label">Недавние файлы:</string>
+    <string name="storage_warning">Каждая фотография, которую ты когда-либо снял, каждый скачанный документ, каждый скриншот — всё это доступно любому приложению, которому ты дал доступ к хранилищу. Банковские выписки, сканы документов, личные фото, пароли, записанные в заметках. Всё.</string>
+    <string-array name="storage_legitimate">
+        <item>Доступ к фото и видео, которые ты хочешь отредактировать</item>
+        <item>Сохранение файлов, которые ты скачиваешь</item>
+        <item>Импорт документов, которые ты выбираешь</item>
+    </string-array>
+    <string-array name="storage_malicious">
+        <item>Читать все твои фото, видео и документы</item>
+        <item>Находить банковские выписки и сканы документов</item>
+        <item>Получать доступ к личным скриншотам и сообщениям</item>
+    </string-array>
+</resources>
