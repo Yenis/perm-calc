@@ -51,7 +51,7 @@ import com.gemstech.permcalc.ui.theme.Palette
 import kotlinx.coroutines.launch
 
 @Composable
-fun CalculatorScreen(currentLang: String, onCycleLang: () -> Unit) {
+fun CalculatorScreen(currentLang: String, onSelectLang: (String) -> Unit) {
     val calc = remember { CalculatorState() }
     val context = LocalContext.current
     val activity = context as ComponentActivity
@@ -119,7 +119,7 @@ fun CalculatorScreen(currentLang: String, onCycleLang: () -> Unit) {
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text("PERMCALC", color = Palette.accent, fontSize = 14.sp, fontWeight = FontWeight.Bold)
-            LangChip(currentLang = currentLang, onCycleLang = onCycleLang)
+            LangChip(currentLang = currentLang, onSelectLang = onSelectLang)
         }
 
         // Background-activity banner

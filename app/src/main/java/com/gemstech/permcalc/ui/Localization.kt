@@ -9,8 +9,24 @@ import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.staticCompositionLocalOf
 import java.util.Locale
 
-/** Supported UI languages, cycled by the language button. */
+/** Supported UI languages, listed by the language button in this order. */
 val SUPPORTED_LANGS = listOf("en", "de", "bs", "es", "fr", "ru")
+
+/**
+ * Each language named in its own language - someone looking for their own
+ * language needs to recognise it, not read its name in a language they do not
+ * speak. Deliberately not localized.
+ */
+private val LANG_NAMES = mapOf(
+    "en" to "English",
+    "de" to "Deutsch",
+    "bs" to "Bosanski",
+    "es" to "Español",
+    "fr" to "Français",
+    "ru" to "Русский",
+)
+
+fun langDisplayName(code: String): String = LANG_NAMES[code] ?: code.uppercase()
 
 fun defaultLang(): String {
     val sys = Locale.getDefault().language

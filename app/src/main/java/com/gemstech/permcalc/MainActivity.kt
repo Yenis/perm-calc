@@ -16,7 +16,6 @@ import com.gemstech.permcalc.demos.permissionsFor
 import com.gemstech.permcalc.ui.CalculatorScreen
 import com.gemstech.permcalc.ui.DisclaimerScreen
 import com.gemstech.permcalc.ui.LocalLocalizedContext
-import com.gemstech.permcalc.ui.SUPPORTED_LANGS
 import com.gemstech.permcalc.ui.defaultLang
 import com.gemstech.permcalc.ui.localizedContext
 import com.gemstech.permcalc.ui.theme.PermCalcTheme
@@ -44,9 +43,7 @@ class MainActivity : ComponentActivity() {
                     // Shared by both screens: the switcher is on the disclaimer
                     // too, so someone who cannot read the current language can
                     // change it before being asked to accept anything.
-                    val cycleLang = {
-                        val idx = SUPPORTED_LANGS.indexOf(lang)
-                        val next = SUPPORTED_LANGS[(idx + 1) % SUPPORTED_LANGS.size]
+                    val selectLang: (String) -> Unit = { next ->
                         lang = next
                         prefs.edit().putString(KEY_LANG, next).apply()
                     }
@@ -54,12 +51,12 @@ class MainActivity : ComponentActivity() {
                     if (accepted) {
                         CalculatorScreen(
                             currentLang = lang,
-                            onCycleLang = cycleLang,
+                            onSelectLang = selectLang,
                         )
                     } else {
                         DisclaimerScreen(
                             currentLang = lang,
-                            onCycleLang = cycleLang,
+                            onSelectLang = selectLang,
                             onAccept = { accepted = true },
                         )
                     }

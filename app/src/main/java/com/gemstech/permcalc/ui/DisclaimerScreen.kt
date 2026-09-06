@@ -32,7 +32,7 @@ import com.gemstech.permcalc.ui.theme.Palette
 @Composable
 fun DisclaimerScreen(
     currentLang: String,
-    onCycleLang: () -> Unit,
+    onSelectLang: (String) -> Unit,
     onAccept: () -> Unit,
 ) {
     val scroll = rememberScrollState()
@@ -50,7 +50,7 @@ fun DisclaimerScreen(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.End,
         ) {
-            LangChip(currentLang = currentLang, onCycleLang = onCycleLang)
+            LangChip(currentLang = currentLang, onSelectLang = onSelectLang)
         }
 
         Spacer(Modifier.height(20.dp))
