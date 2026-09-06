@@ -5,6 +5,41 @@ All notable changes to PermCalc are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-09-06
+
+Three more languages, and a language switcher.
+
+### Added
+
+- **Español, Français and Русский.** PermCalc now speaks six languages, matching
+  PortalGems. Every screen is translated, including the reveals and the
+  "how it's abused" panels.
+- **The language switcher on the disclaimer screen.** Previously it lived only in
+  the calculator header, which meant the first thing you saw — the screen asking
+  you to accept — was stuck in a language you might not read. It is now on both
+  screens.
+
+### Changed
+
+- **The language button opens a menu instead of cycling.** With six languages,
+  cycling meant up to five taps to reach yours. The menu lists all of them at
+  once, each named in its own language — English, Deutsch, Bosanski, Español,
+  Français, Русский — because someone looking for their language needs to
+  recognise it, not read its name in a language they do not speak.
+
+### Fixed
+
+- **Bosnian wording that read as Croatian.** `fotografirati` → `fotografisati`,
+  `sučelje` → `interfejs`, `virtualni` → `virtuelni`, `sinkronizacija` →
+  `sinhronizacija`, `stražnja kamera` → `zadnja kamera`, `pohrana` → `memorija`,
+  and `dohvaćanje` → `određivanje`.
+- **Several Bosnian strings that were simply wrong**, rather than regional: an
+  ungrammatical negation in the disclaimer, a `bez da` Germanism, a verb typo
+  (`preuzimeš`), an untranslated English plural (`stalkersima` → `uhodama`), and
+  a location label that collided with the word for weather.
+
+[1.1.0]: https://github.com/Yenis/perm-calc/releases/tag/v1.1.0
+
 ## [1.0.0] - 2026-09-05
 
 First release. A calculator that asks for permissions it has no business
