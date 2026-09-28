@@ -35,10 +35,14 @@ jobs:
     outputs:
       tag: ${{ steps.tag.outputs.tag }}
     steps:
-      - uses: actions/checkout@v4
-
       - id: tag
         run: echo "tag=${{ github.event.inputs.tag || github.ref_name }}" >> "$GITHUB_OUTPUT"
+
+      # A manual dispatch runs from a branch; check out the tag itself so the
+      # notes (and, below, the APK) come from the tagged commit, not the branch.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.tag.outputs.tag }}
 
       - name: Ensure the release exists
         env:
@@ -68,12 +72,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.create-release.outputs.tag }}
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "17"
           cache: gradle
+      # The action's default package list includes the legacy `tools` package,
+      # which newer sdkmanager repositories no longer carry - installing it fails.
       - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
 
       # The APK reports versionName from app/build.gradle.kts, not from the tag.
       # A mismatch is a bump someone forgot, so say so loudly without failing.
