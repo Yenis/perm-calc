@@ -5,7 +5,9 @@ All notable changes to PermCalc are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.2.0] - 2026-09-28
+
+One more demo — the clipboard, the kind of access that needs no permission at all.
 
 ### Added
 
@@ -20,6 +22,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   phone numbers. Everything stays in memory and is dropped when the screen
   closes. Blunt by design, because there is no setting to hide behind — standard
   Android cannot stop this, and only GrapheneOS can revoke it per app.
+- **All six languages.** The demo — its info sheet, the leave-and-copy
+  instructions, the reveal and the scanner labels — is translated into English,
+  Deutsch, Bosanski, Español, Français and Русский, like every other screen.
+
+### Notes
+
+- The demo is honest about Android's own protections: on Android 12 and newer the
+  system flashes a brief "pasted from your clipboard" toast after a cross-app
+  read, so the copy folds that in rather than claiming the read is invisible —
+  it appears only after the data is already taken, and older versions show
+  nothing at all.
 
 ## [1.1.0] - 2026-09-06
 

@@ -57,11 +57,11 @@ intact and untampered. After downloading both the APK and its `.sha256`, run:
 
 ```bash
 # Linux / macOS
-sha256sum -c PermCalc-1.1.0-android.apk.sha256
+sha256sum -c PermCalc-1.2.0-android.apk.sha256
 
 # Windows (PowerShell) - check the two hashes match
-Get-FileHash PermCalc-1.1.0-android.apk -Algorithm SHA256
-Get-Content PermCalc-1.1.0-android.apk.sha256
+Get-FileHash PermCalc-1.2.0-android.apk -Algorithm SHA256
+Get-Content PermCalc-1.2.0-android.apk.sha256
 ```
 
 A matching hash means the file is byte-for-byte what was published.
@@ -180,7 +180,7 @@ deserves to be installed if that is verifiable rather than promised, so:
 
   ```bash
   # aapt2 ships in your Android SDK under build-tools/<version>/
-  aapt2 dump permissions PermCalc-1.1.0-android.apk
+  aapt2 dump permissions PermCalc-1.2.0-android.apk
   ```
 
   `INTERNET` is absent from the list. Every permission it *does* request maps to
