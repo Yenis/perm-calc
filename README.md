@@ -114,8 +114,8 @@ clipboard permission on Android, so there is no dialog and no background phase.
 It takes over the screen, asks you to leave and copy something anywhere on your
 phone, and reads the clipboard the instant you return — because that is exactly
 what any foreground app can do, silently, with nothing to grant and nothing to
-notice. Standard Android offers no way to stop it; only
-[GrapheneOS](https://grapheneos.org/features) lets you revoke clipboard access
+notice. Standard Android offers no way to stop it; only recent
+versions of [GrapheneOS](https://grapheneos.org/features) let you revoke clipboard access
 per app.
 
 Available in **English, Deutsch and Bosanski** — tap the language chip in the

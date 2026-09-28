@@ -21,7 +21,7 @@ One more demo — the clipboard, the kind of access that needs no permission at 
   numbers (Luhn-checked), IBANs (mod-97-checked), crypto addresses, emails and
   phone numbers. Everything stays in memory and is dropped when the screen
   closes. Blunt by design, because there is no setting to hide behind — standard
-  Android cannot stop this, and only GrapheneOS can revoke it per app.
+  Android cannot stop this, and only recent versions of GrapheneOS can revoke it per app.
 - **All six languages.** The demo — its info sheet, the leave-and-copy
   instructions, the reveal and the scanner labels — is translated into English,
   Deutsch, Bosanski, Español, Français and Русский, like every other screen.
