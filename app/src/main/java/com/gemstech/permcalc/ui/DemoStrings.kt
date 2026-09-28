@@ -33,6 +33,10 @@ fun demoInfoRes(demo: Demo): DemoInfoRes = when (demo) {
         R.string.storage_info_title, R.string.storage_info_subtitle,
         R.array.storage_legitimate, R.array.storage_malicious, R.string.storage_warning,
     )
+    Demo.CLIPBOARD -> DemoInfoRes(
+        R.string.clipboard_info_title, R.string.clipboard_info_subtitle,
+        R.array.clipboard_legitimate, R.array.clipboard_malicious, R.string.clipboard_warning,
+    )
 }
 
 fun permButtonLabelRes(demo: Demo): Int = when (demo) {
@@ -41,6 +45,7 @@ fun permButtonLabelRes(demo: Demo): Int = when (demo) {
     Demo.CONTACTS -> R.string.perm_contacts
     Demo.LOCATION -> R.string.perm_location
     Demo.STORAGE -> R.string.perm_storage
+    Demo.CLIPBOARD -> R.string.perm_clipboard
 }
 
 fun demoRunningRes(demo: Demo): Int = when (demo) {
@@ -49,6 +54,7 @@ fun demoRunningRes(demo: Demo): Int = when (demo) {
     Demo.CONTACTS -> R.string.contacts_running
     Demo.LOCATION -> R.string.location_running
     Demo.STORAGE -> R.string.storage_running
+    Demo.CLIPBOARD -> error("The clipboard demo runs on its own screen, not in the background")
 }
 
 fun demoIcon(demo: Demo): String = when (demo) {
@@ -57,4 +63,5 @@ fun demoIcon(demo: Demo): String = when (demo) {
     Demo.CONTACTS -> "👥"
     Demo.LOCATION -> "📍"
     Demo.STORAGE -> "🗂️"
+    Demo.CLIPBOARD -> "📋"
 }

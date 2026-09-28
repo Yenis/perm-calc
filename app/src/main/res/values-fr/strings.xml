@@ -153,4 +153,60 @@
         <item>Trouver des relevés bancaires et des scans de pièces d\'identité</item>
         <item>Accéder à des captures d\'écran et à des messages privés</item>
     </string-array>
+
+    <!-- Clipboard -->
+    <string name="perm_clipboard">Presse-papiers</string>
+    <string name="clipboard_button_hint">aucune autorisation requise</string>
+    <string name="clipboard_info_title">Accès au presse-papiers</string>
+    <string name="clipboard_info_subtitle">Celui qui ne demande aucune autorisation</string>
+    <string name="clipboard_info_note">Il n\'existe pas de fenêtre « Autoriser le presse-papiers ». Toute application au premier plan peut lire ton presse-papiers dès qu\'elle s\'ouvre — en silence, sans rien à accorder et sans rien à voir. C\'est pour ça que celui-ci est le plus sournois de tous.</string>
+    <string name="clipboard_start">Montre-moi</string>
+    <string-array name="clipboard_legitimate">
+        <item>Le bouton Coller, dans toutes les applications que tu utilises</item>
+        <item>Un gestionnaire de mots de passe qui remplit un identifiant copié</item>
+        <item>Copier un lien, une adresse ou une photo d\'une app à l\'autre</item>
+    </string-array>
+    <string-array name="clipboard_malicious">
+        <item>Lire chaque mot de passe, code 2FA et numéro de carte que tu copies — précisément ce qu\'on copie au lieu de le taper</item>
+        <item>Passer chaque contenu au crible dès que tu changes d\'app, sans le moindre appui</item>
+        <item>Remplacer discrètement une adresse de portefeuille crypto ou un IBAN copié par celui de l\'attaquant, pour que ton paiement lui parvienne</item>
+        <item>Constituer un historique de tout ce que tu copies dans la journée, car chaque élément porte un horodatage et l\'app qui l\'a créé</item>
+    </string-array>
+
+    <!-- Clipboard : écran d\'attente -->
+    <string name="clipboard_wait_title">Va copier quelque chose — n\'importe quoi</string>
+    <string name="clipboard_wait_body">Cette démo n\'a pas de phase en arrière-plan, parce qu\'elle n\'en a pas besoin. Quitte PermCalc, copie un texte ou une image n\'importe où sur ton téléphone, puis reviens. Dès que cette app repasse au premier plan, elle lit ton presse-papiers — sans autorisation, sans invite. Sur Android 12+, le système peut afficher un bref message indiquant qu\'un contenu a été collé ; sur les versions plus anciennes, rien du tout.</string>
+    <string name="clipboard_wait_step1">Quitte cette app (bouton d\'accueil ou sélecteur d\'apps — ne la ferme pas).</string>
+    <string name="clipboard_wait_step2">Ouvre n\'importe quoi — Messages, Notes, ton navigateur, ton gestionnaire de mots de passe — et copie un texte ou une image. Un mot de passe ou un code illustre le mieux la chose.</string>
+    <string name="clipboard_wait_step3">Reviens sur PermCalc. Elle aura déjà lu ce que tu as copié.</string>
+    <string name="clipboard_wait_nopermission">On ne t\'a jamais demandé. Il n\'y a aucune autorisation à accorder ou refuser. Chaque app que tu as ouverte aurait pu faire exactement cela.</string>
+
+    <!-- Clipboard : révélation -->
+    <string name="clipboard_reveal_title">Voici ce que tu viens de copier</string>
+    <string name="clipboard_reveal_desc">Cette app l\'a lu dès son retour à l\'écran. Elle n\'a jamais demandé. Sur Android 12 et plus récent, le système a pu afficher brièvement « collé depuis le presse-papiers » — mais seulement après la lecture, et sans nommer ce qui a été pris ; les téléphones plus anciens n\'affichent rien. Tout ce qui suit reste en mémoire uniquement et disparaît quand tu fermes cet écran — un vrai attaquant l\'aurait déjà exfiltré de ton téléphone.</string>
+    <string name="clipboard_reveal_empty_title">Le presse-papiers était vide</string>
+    <string name="clipboard_reveal_empty_desc">Il n\'y avait rien dans ton presse-papiers, ou ta version d\'Android l\'a vidé pendant que PermCalc était en arrière-plan — certaines versions récentes le font après quelques minutes, par protection. Copie quelque chose et reviens pour voir la lecture.</string>
+    <string name="clipboard_piece_text">Texte copié</string>
+    <string name="clipboard_piece_image">Image copiée</string>
+    <string name="clipboard_piece_file">Fichier / lien copié</string>
+    <string name="clipboard_text_truncated">Le contenu complet fait %1$d caractères — montré ici en partie. Une vraie app garde tout.</string>
+    <string name="clipboard_meta_label">Libellé</string>
+    <string name="clipboard_meta_copied">Copié à</string>
+    <string name="clipboard_meta_type">Type de donnée</string>
+    <string name="clipboard_meta_sensitive">Marqué sensible</string>
+    <string name="clipboard_meta_sensitive_yes">Oui — l\'app source l\'a marqué comme privé (un clavier le masque dans les aperçus, mais tout lecteur en obtient quand même la valeur)</string>
+
+    <!-- Clipboard : le scan automatique d\'une app malveillante -->
+    <string name="clipboard_findings_title">Ce que le scanner d\'un attaquant repère</string>
+    <string name="clipboard_findings_desc">Une app malveillante ne lit pas ton contenu à la main. Elle passe quelques vérifications instantanées sur chaque élément et en extrait les parties de valeur. En appliquant ces mêmes vérifications à ce que tu as copié, voici ce qui aurait été repéré :</string>
+    <string name="clipboard_find_password">Mot de passe</string>
+    <string name="clipboard_find_otp">Code 2FA / OTP</string>
+    <string name="clipboard_find_card">Numéro de carte</string>
+    <string name="clipboard_find_iban">IBAN bancaire</string>
+    <string name="clipboard_find_crypto">Adresse crypto</string>
+    <string name="clipboard_find_email">E-mail</string>
+    <string name="clipboard_find_phone">Numéro de téléphone</string>
+    <string name="clipboard_find_url">Lien</string>
+
+    <string name="clipboard_warning">Copier un mot de passe depuis ton gestionnaire semble sûr — tu le colles et tu passes à autre chose. Mais entre le copier et le coller, il attend dans un tiroir que toute app au premier plan peut ouvrir. La défense, ce sont des habitudes, pas des réglages : colle tout de suite puis copie quelque chose d\'anodin pour l\'écraser ; pour les mots de passe et les codes, préfère la saisie automatique au copier-coller ; et vérifie toujours une adresse de portefeuille ou un IBAN collé caractère par caractère, car le remplacer est le vol le plus facile de tous. L\'Android standard n\'a aucun interrupteur pour empêcher les apps de lire le presse-papiers — seul GrapheneOS te permet de retirer cet accès app par app.</string>
 </resources>

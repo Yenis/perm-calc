@@ -22,6 +22,13 @@ import com.gemstech.permcalc.ui.theme.PermCalcTheme
 
 class MainActivity : ComponentActivity() {
 
+    /**
+     * Set while the clipboard demo is open. That demo asks the user to leave the
+     * app and come back, and the reset below kills the process as soon as the
+     * app is backgrounded - which would throw them back to the disclaimer.
+     */
+    var holdPermissionReset = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -78,7 +85,7 @@ class MainActivity : ComponentActivity() {
      */
     override fun onStop() {
         super.onStop()
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && !isChangingConfigurations) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && !isChangingConfigurations && !holdPermissionReset) {
             val granted = Demo.ALL
                 .flatMap { permissionsFor(it).toList() }
                 .distinct()

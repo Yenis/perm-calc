@@ -27,6 +27,9 @@ fun permissionsFor(demo: Demo): Array<String> = when (demo) {
     } else {
         arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
     }
+
+    // No permission exists for reading the clipboard.
+    Demo.CLIPBOARD -> emptyArray()
 }
 
 /** Whether the granted-permission map satisfies what the demo needs to run. */
@@ -43,4 +46,5 @@ fun isGranted(demo: Demo, result: Map<String, Boolean>): Boolean = when (demo) {
     } else {
         result[Manifest.permission.READ_EXTERNAL_STORAGE] == true
     }
+    Demo.CLIPBOARD -> true
 }

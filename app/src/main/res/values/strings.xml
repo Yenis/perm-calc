@@ -154,4 +154,60 @@
         <item>Finding bank statements and ID scans you downloaded</item>
         <item>Accessing private screenshots and messages</item>
     </string-array>
+
+    <!-- Clipboard -->
+    <string name="perm_clipboard">Clipboard</string>
+    <string name="clipboard_button_hint">no permission needed</string>
+    <string name="clipboard_info_title">Clipboard Access</string>
+    <string name="clipboard_info_subtitle">The one that needs no permission at all</string>
+    <string name="clipboard_info_note">There is no "Allow clipboard" dialog. Any app in the foreground can read your clipboard the instant it opens, with nothing to grant. On Android 12 and newer you may catch a brief "pasted from your clipboard" message — but only after the app already has the data; older phones show nothing at all. That is why this one is the sneakiest of them all.</string>
+    <string name="clipboard_start">Show me</string>
+    <string-array name="clipboard_legitimate">
+        <item>The Paste button, in every app you use</item>
+        <item>A password manager filling in a login you copied</item>
+        <item>Copying a link, an address, or a photo between apps</item>
+    </string-array>
+    <string-array name="clipboard_malicious">
+        <item>Read every password, 2FA code, and card number you copy — the exact things people copy instead of typing</item>
+        <item>Scan each clip for anything worth stealing the moment you switch apps, no tap required</item>
+        <item>Silently swap a copied crypto wallet address or bank IBAN for the attacker\'s, so your payment goes to them</item>
+        <item>Build a timeline of everything you copy all day, because a clip carries a timestamp and the app that made it</item>
+    </string-array>
+
+    <!-- Clipboard: waiting screen -->
+    <string name="clipboard_wait_title">Now go copy something — anything</string>
+    <string name="clipboard_wait_body">This demo has no background phase, because it needs none. Leave PermCalc, copy a piece of text or an image anywhere on your phone, then come back. The moment this app returns to the foreground, it reads your clipboard — no permission, no prompt. On Android 12+ the system may flash a quick note that something was pasted; on older versions, nothing at all.</string>
+    <string name="clipboard_wait_step1">Leave this app (home button or app switcher — do not close it).</string>
+    <string name="clipboard_wait_step2">Open anything — Messages, Notes, your browser, your password manager — and copy some text or an image. A password or a code makes the point best.</string>
+    <string name="clipboard_wait_step3">Come back to PermCalc. It will already have read whatever you copied.</string>
+    <string name="clipboard_wait_nopermission">You were never asked. There is no permission to grant or deny. Every app you have ever opened could have done exactly this.</string>
+
+    <!-- Clipboard: reveal -->
+    <string name="clipboard_reveal_title">Here is what you just copied</string>
+    <string name="clipboard_reveal_desc">This app read it the instant it came back on screen. It never asked. On Android 12 and newer the system may have flashed a brief "pasted from your clipboard" toast — but only after the read, and it names nothing that was taken; older phones show nothing. Everything below is held in memory only and vanishes when you close this screen — a real attacker would have shipped it off your phone by now.</string>
+    <string name="clipboard_reveal_empty_title">Clipboard was empty</string>
+    <string name="clipboard_reveal_empty_desc">Nothing was on your clipboard, or your Android version cleared it while PermCalc was in the background — some newer versions do this after a few minutes as a protection. Go copy something and come back to see the read happen.</string>
+    <string name="clipboard_piece_text">Copied text</string>
+    <string name="clipboard_piece_image">Copied image</string>
+    <string name="clipboard_piece_file">Copied file / link</string>
+    <string name="clipboard_text_truncated">Full clip is %1$d characters — shown here in part. A real app keeps the whole thing.</string>
+    <string name="clipboard_meta_label">Clip label</string>
+    <string name="clipboard_meta_copied">Copied at</string>
+    <string name="clipboard_meta_type">Data type</string>
+    <string name="clipboard_meta_sensitive">Marked sensitive</string>
+    <string name="clipboard_meta_sensitive_yes">Yes — the source app flagged this as private (a keyboard hides it in previews, but any reader still gets the value)</string>
+
+    <!-- Clipboard: the automatic scan a malicious app would run -->
+    <string name="clipboard_findings_title">What an attacker\'s scanner flags</string>
+    <string name="clipboard_findings_desc">A malicious app does not read your clip by hand. It runs a few instant checks over every clip and pulls out the valuable parts. Running those same checks on what you copied, this is what would have been singled out:</string>
+    <string name="clipboard_find_password">Password</string>
+    <string name="clipboard_find_otp">2FA / OTP code</string>
+    <string name="clipboard_find_card">Card number</string>
+    <string name="clipboard_find_iban">Bank IBAN</string>
+    <string name="clipboard_find_crypto">Crypto address</string>
+    <string name="clipboard_find_email">Email</string>
+    <string name="clipboard_find_phone">Phone number</string>
+    <string name="clipboard_find_url">Link</string>
+
+    <string name="clipboard_warning">Copying a password out of your password manager feels safe — you paste it and move on. But between the copy and the paste it sits in a drawer every foreground app can open. The defenses are habits, not settings: paste immediately and copy something harmless afterwards to overwrite it; prefer autofill over copy-paste for passwords and codes; and always re-check a pasted wallet address or IBAN character by character, because swapping it is the easiest theft of all. Standard Android has no switch to stop apps reading the clipboard — only GrapheneOS lets you take that access away per app.</string>
 </resources>

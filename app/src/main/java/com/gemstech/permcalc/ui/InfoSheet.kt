@@ -56,6 +56,24 @@ fun InfoSheet(demo: Demo, onGrant: () -> Unit, onSkip: () -> Unit) {
             Text(tr(res.infoSubtitle), color = Palette.dim, fontSize = 14.sp)
             Spacer(Modifier.height(16.dp))
 
+            // No dialog is coming for this one - say so before the cards, since
+            // it is the most important thing on the sheet.
+            if (demo == Demo.CLIPBOARD) {
+                Text(
+                    tr(R.string.clipboard_info_note),
+                    color = Palette.maliciousText,
+                    fontSize = 13.sp,
+                    lineHeight = 19.sp,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(12.dp))
+                        .background(Palette.warningBg)
+                        .border(1.dp, Palette.warningBorder, RoundedCornerShape(12.dp))
+                        .padding(12.dp),
+                )
+                Spacer(Modifier.height(12.dp))
+            }
+
             Column(
                 modifier = Modifier
                     .heightIn(max = 360.dp)
@@ -81,7 +99,11 @@ fun InfoSheet(demo: Demo, onGrant: () -> Unit, onSkip: () -> Unit) {
             }
 
             Spacer(Modifier.height(20.dp))
-            PrimaryButton(text = tr(R.string.common_grant), onClick = onGrant, modifier = Modifier.fillMaxWidth())
+            PrimaryButton(
+                text = tr(if (demo == Demo.CLIPBOARD) R.string.clipboard_start else R.string.common_grant),
+                onClick = onGrant,
+                modifier = Modifier.fillMaxWidth(),
+            )
             Spacer(Modifier.height(10.dp))
             Box(
                 modifier = Modifier

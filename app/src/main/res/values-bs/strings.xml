@@ -142,4 +142,60 @@
         <item>Pronalaženje izvoda s računa i skenova dokumenata</item>
         <item>Pristup privatnim screenshotovima i porukama</item>
     </string-array>
+
+    <!-- Clipboard -->
+    <string name="perm_clipboard">Međuspremnik</string>
+    <string name="clipboard_button_hint">ne treba dozvola</string>
+    <string name="clipboard_info_title">Pristup međuspremniku</string>
+    <string name="clipboard_info_subtitle">Onaj kojem uopšte ne treba dozvola</string>
+    <string name="clipboard_info_note">Ne postoji prozor „Dozvoli međuspremnik". Svaka aplikacija u prednjem planu može čitati tvoj međuspremnik čim se otvori — bez zvuka, bez ičega što daješ i bez ičega što vidiš. Upravo zato je ova najpodmuklija od svih.</string>
+    <string name="clipboard_start">Pokaži mi</string>
+    <string-array name="clipboard_legitimate">
+        <item>Dugme Zalijepi, u svakoj aplikaciji koju koristiš</item>
+        <item>Menadžer lozinki koji upisuje prijavu koju si kopirao/la</item>
+        <item>Kopiranje linka, adrese ili fotografije između aplikacija</item>
+    </string-array>
+    <string-array name="clipboard_malicious">
+        <item>Čitati svaku lozinku, 2FA kod i broj kartice koji kopiraš — baš ono što ljudi kopiraju umjesto da kucaju</item>
+        <item>Pregledati svaki sadržaj čim promijeniš aplikaciju i izvući ono vrijedno, bez ijednog dodira</item>
+        <item>Tiho zamijeniti kopiranu adresu kripto novčanika ili bankovni IBAN onim napadačevim, da tvoja uplata ode njemu</item>
+        <item>Graditi vremensku liniju svega što kopiraš cijeli dan, jer svaki unos nosi vremensku oznaku i aplikaciju koja ga je napravila</item>
+    </string-array>
+
+    <!-- Clipboard: ekran čekanja -->
+    <string name="clipboard_wait_title">Sad idi kopiraj nešto — bilo šta</string>
+    <string name="clipboard_wait_body">Ova demonstracija nema pozadinsku fazu, jer joj ne treba. Izađi iz PermCalc-a, kopiraj bilo gdje na telefonu neki tekst ili sliku, pa se vrati. Čim se ova aplikacija vrati u prednji plan, pročita tvoj međuspremnik — bez dozvole, bez upita. Na Androidu 12+ sistem možda nakratko prikaže poruku da je nešto zalijepljeno; na starijim verzijama ništa.</string>
+    <string name="clipboard_wait_step1">Izađi iz ove aplikacije (dugme Home ili prebacivač aplikacija — nemoj je zatvoriti).</string>
+    <string name="clipboard_wait_step2">Otvori bilo šta — Poruke, Bilješke, preglednik, menadžer lozinki — i kopiraj neki tekst ili sliku. Lozinka ili kod najbolje pokazuju poentu.</string>
+    <string name="clipboard_wait_step3">Vrati se u PermCalc. Već je pročitao ono što si kopirao/la.</string>
+    <string name="clipboard_wait_nopermission">Niko te nije pitao. Nema dozvole koju bi dao ili odbio. Svaka aplikacija koju si ikad otvorio/la mogla je uraditi upravo ovo.</string>
+
+    <!-- Clipboard: otkrivanje -->
+    <string name="clipboard_reveal_title">Evo šta si upravo kopirao/la</string>
+    <string name="clipboard_reveal_desc">Ova aplikacija je to pročitala čim se vratila na ekran. Nikad nije pitala. Na Androidu 12 i novijem sistem je možda nakratko prikazao „zalijepljeno iz međuspremnika" — ali tek nakon čitanja, i ne navodi ništa od onoga što je uzeto; stariji telefoni ne pokazuju ništa. Sve ispod čuva se samo u memoriji i nestaje kad zatvoriš ovaj ekran — pravi napadač bi to već poslao s tvog telefona.</string>
+    <string name="clipboard_reveal_empty_title">Međuspremnik je bio prazan</string>
+    <string name="clipboard_reveal_empty_desc">U tvom međuspremniku nije bilo ničega, ili ga je tvoja verzija Androida obrisala dok je PermCalc bio u pozadini — neke novije verzije to rade nakon nekoliko minuta radi zaštite. Kopiraj nešto pa se vrati da vidiš čitanje.</string>
+    <string name="clipboard_piece_text">Kopirani tekst</string>
+    <string name="clipboard_piece_image">Kopirana slika</string>
+    <string name="clipboard_piece_file">Kopirana datoteka / link</string>
+    <string name="clipboard_text_truncated">Cijeli sadržaj ima %1$d znakova — ovdje prikazan djelimično. Prava aplikacija zadrži sve.</string>
+    <string name="clipboard_meta_label">Oznaka</string>
+    <string name="clipboard_meta_copied">Kopirano u</string>
+    <string name="clipboard_meta_type">Vrsta podataka</string>
+    <string name="clipboard_meta_sensitive">Označeno kao osjetljivo</string>
+    <string name="clipboard_meta_sensitive_yes">Da — izvorna aplikacija je ovo označila kao privatno (tastatura to skriva u pregledima, ali svaki čitač i dalje dobije vrijednost)</string>
+
+    <!-- Clipboard: automatsko skeniranje zlonamjerne aplikacije -->
+    <string name="clipboard_findings_title">Šta skener napadača izdvaja</string>
+    <string name="clipboard_findings_desc">Zlonamjerna aplikacija ne čita tvoj sadržaj ručno. Pokrene nekoliko trenutnih provjera nad svakim unosom i izvuče vrijedne dijelove. Kad se te iste provjere pokrenu nad onim što si kopirao/la, ovo bi bilo izdvojeno:</string>
+    <string name="clipboard_find_password">Lozinka</string>
+    <string name="clipboard_find_otp">2FA / OTP kod</string>
+    <string name="clipboard_find_card">Broj kartice</string>
+    <string name="clipboard_find_iban">Bankovni IBAN</string>
+    <string name="clipboard_find_crypto">Kripto adresa</string>
+    <string name="clipboard_find_email">E-mail</string>
+    <string name="clipboard_find_phone">Broj telefona</string>
+    <string name="clipboard_find_url">Link</string>
+
+    <string name="clipboard_warning">Kopiranje lozinke iz menadžera lozinki djeluje sigurno — zalijepiš je i ideš dalje. Ali između kopiranja i lijepljenja ona stoji u ladici koju svaka aplikacija u prednjem planu može otvoriti. Odbrana su navike, a ne postavke: zalijepi odmah pa poslije kopiraj nešto bezopasno da to prepišeš; za lozinke i kodove radije koristi automatsko popunjavanje nego kopiranje; i uvijek provjeri zalijepljenu adresu novčanika ili IBAN znak po znak, jer je njihova zamjena najlakša krađa od svih. Obični Android nema prekidač da spriječi aplikacije da čitaju međuspremnik — jedino ti GrapheneOS dopušta da taj pristup oduzmeš po aplikaciji.</string>
 </resources>

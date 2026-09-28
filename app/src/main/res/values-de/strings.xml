@@ -142,4 +142,60 @@
         <item>Kontoauszüge und ID-Scans finden, die du heruntergeladen hast</item>
         <item>Auf private Screenshots und Nachrichten zugreifen</item>
     </string-array>
+
+    <!-- Clipboard -->
+    <string name="perm_clipboard">Zwischenablage</string>
+    <string name="clipboard_button_hint">keine Berechtigung nötig</string>
+    <string name="clipboard_info_title">Zugriff auf die Zwischenablage</string>
+    <string name="clipboard_info_subtitle">Die, die überhaupt keine Berechtigung braucht</string>
+    <string name="clipboard_info_note">Es gibt keinen Dialog „Zwischenablage erlauben". Jede App im Vordergrund kann deine Zwischenablage lesen, sobald sie geöffnet wird — lautlos, ohne dass du etwas gewährst und ohne dass du etwas siehst. Genau deshalb ist diese hier die heimtückischste von allen.</string>
+    <string name="clipboard_start">Zeig es mir</string>
+    <string-array name="clipboard_legitimate">
+        <item>Der Einfügen-Knopf in jeder App, die du nutzt</item>
+        <item>Ein Passwort-Manager, der einen kopierten Login einsetzt</item>
+        <item>Einen Link, eine Adresse oder ein Foto zwischen Apps kopieren</item>
+    </string-array>
+    <string-array name="clipboard_malicious">
+        <item>Jedes Passwort, jeden 2FA-Code und jede Kartennummer lesen, die du kopierst — genau das, was man kopiert statt zu tippen</item>
+        <item>Jeden Inhalt beim App-Wechsel sofort nach Wertvollem durchsuchen, ganz ohne Tippen</item>
+        <item>Eine kopierte Krypto-Adresse oder Bank-IBAN heimlich gegen die des Angreifers tauschen, damit deine Zahlung bei ihm landet</item>
+        <item>Einen Verlauf von allem aufbauen, was du den Tag über kopierst — denn jeder Eintrag trägt einen Zeitstempel und die App, die ihn erzeugt hat</item>
+    </string-array>
+
+    <!-- Clipboard: Wartebildschirm -->
+    <string name="clipboard_wait_title">Kopiere jetzt irgendetwas — egal was</string>
+    <string name="clipboard_wait_body">Diese Demo hat keine Hintergrundphase, denn sie braucht keine. Verlasse PermCalc, kopiere irgendwo auf deinem Handy einen Text oder ein Bild und komm zurück. Sobald diese App wieder in den Vordergrund kommt, liest sie deine Zwischenablage — ohne Berechtigung, ohne Abfrage. Ab Android 12 zeigt das System vielleicht kurz einen Hinweis, dass etwas eingefügt wurde; auf älteren Versionen gar nichts.</string>
+    <string name="clipboard_wait_step1">Verlasse diese App (Home-Taste oder App-Wechsler — nicht schließen).</string>
+    <string name="clipboard_wait_step2">Öffne irgendetwas — Nachrichten, Notizen, deinen Browser, deinen Passwort-Manager — und kopiere Text oder ein Bild. Ein Passwort oder ein Code macht es am deutlichsten.</string>
+    <string name="clipboard_wait_step3">Komm zurück zu PermCalc. Es hat bereits gelesen, was du kopiert hast.</string>
+    <string name="clipboard_wait_nopermission">Du wurdest nie gefragt. Es gibt keine Berechtigung zu erlauben oder abzulehnen. Jede App, die du je geöffnet hast, hätte genau das tun können.</string>
+
+    <!-- Clipboard: Enthüllung -->
+    <string name="clipboard_reveal_title">Das hast du gerade kopiert</string>
+    <string name="clipboard_reveal_desc">Diese App hat es gelesen, sobald sie wieder auf dem Bildschirm war. Sie hat nie gefragt. Ab Android 12 hat das System vielleicht kurz „aus der Zwischenablage eingefügt" eingeblendet — aber erst nach dem Lesen, und es nennt nichts von dem, was genommen wurde; ältere Handys zeigen nichts. Alles unten liegt nur im Speicher und verschwindet, wenn du diesen Bildschirm schließt — ein echter Angreifer hätte es längst von deinem Handy geschickt.</string>
+    <string name="clipboard_reveal_empty_title">Zwischenablage war leer</string>
+    <string name="clipboard_reveal_empty_desc">Es war nichts in deiner Zwischenablage, oder deine Android-Version hat sie geleert, während PermCalc im Hintergrund war — manche neueren Versionen tun das nach einigen Minuten als Schutz. Kopiere etwas und komm zurück, um den Lesevorgang zu sehen.</string>
+    <string name="clipboard_piece_text">Kopierter Text</string>
+    <string name="clipboard_piece_image">Kopiertes Bild</string>
+    <string name="clipboard_piece_file">Kopierte Datei / Link</string>
+    <string name="clipboard_text_truncated">Der ganze Inhalt hat %1$d Zeichen — hier nur teilweise gezeigt. Eine echte App behält alles.</string>
+    <string name="clipboard_meta_label">Bezeichnung</string>
+    <string name="clipboard_meta_copied">Kopiert um</string>
+    <string name="clipboard_meta_type">Datentyp</string>
+    <string name="clipboard_meta_sensitive">Als sensibel markiert</string>
+    <string name="clipboard_meta_sensitive_yes">Ja — die Quell-App hat dies als privat markiert (eine Tastatur verbirgt es in Vorschauen, aber jeder Leser erhält trotzdem den Wert)</string>
+
+    <!-- Clipboard: der automatische Scan einer bösartigen App -->
+    <string name="clipboard_findings_title">Was der Scanner eines Angreifers markiert</string>
+    <string name="clipboard_findings_desc">Eine bösartige App liest deinen Inhalt nicht von Hand. Sie führt ein paar sofortige Prüfungen über jeden Eintrag aus und zieht die wertvollen Teile heraus. Dieselben Prüfungen auf das angewandt, was du kopiert hast, hätten Folgendes herausgefiltert:</string>
+    <string name="clipboard_find_password">Passwort</string>
+    <string name="clipboard_find_otp">2FA-/OTP-Code</string>
+    <string name="clipboard_find_card">Kartennummer</string>
+    <string name="clipboard_find_iban">Bank-IBAN</string>
+    <string name="clipboard_find_crypto">Krypto-Adresse</string>
+    <string name="clipboard_find_email">E-Mail</string>
+    <string name="clipboard_find_phone">Telefonnummer</string>
+    <string name="clipboard_find_url">Link</string>
+
+    <string name="clipboard_warning">Ein Passwort aus dem Passwort-Manager zu kopieren fühlt sich sicher an — du fügst es ein und machst weiter. Doch zwischen Kopieren und Einfügen liegt es in einer Schublade, die jede Vordergrund-App öffnen kann. Der Schutz sind Gewohnheiten, keine Einstellungen: füge sofort ein und kopiere danach etwas Harmloses, um es zu überschreiben; nutze bei Passwörtern und Codes lieber Autofill als Kopieren; und prüfe eine eingefügte Wallet-Adresse oder IBAN immer Zeichen für Zeichen, denn ihr Austausch ist der einfachste Diebstahl überhaupt. Das normale Android hat keinen Schalter, um Apps das Lesen der Zwischenablage zu verbieten — nur GrapheneOS erlaubt es dir, diesen Zugriff pro App zu entziehen.</string>
 </resources>

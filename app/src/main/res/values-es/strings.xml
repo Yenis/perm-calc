@@ -153,4 +153,60 @@
         <item>Encontrar extractos bancarios y escaneos de documentos</item>
         <item>Acceder a capturas de pantalla y mensajes privados</item>
     </string-array>
+
+    <!-- Clipboard -->
+    <string name="perm_clipboard">Portapapeles</string>
+    <string name="clipboard_button_hint">no requiere permiso</string>
+    <string name="clipboard_info_title">Acceso al portapapeles</string>
+    <string name="clipboard_info_subtitle">El que no necesita ningún permiso</string>
+    <string name="clipboard_info_note">No existe un diálogo de «Permitir portapapeles». Cualquier app en primer plano puede leer tu portapapeles en cuanto se abre — en silencio, sin nada que conceder y sin nada que ver. Por eso este es el más sigiloso de todos.</string>
+    <string name="clipboard_start">Muéstramelo</string>
+    <string-array name="clipboard_legitimate">
+        <item>El botón Pegar, en todas las apps que usas</item>
+        <item>Un gestor de contraseñas que rellena un inicio de sesión que copiaste</item>
+        <item>Copiar un enlace, una dirección o una foto entre apps</item>
+    </string-array>
+    <string-array name="clipboard_malicious">
+        <item>Leer cada contraseña, código 2FA y número de tarjeta que copias — justo lo que la gente copia en vez de teclear</item>
+        <item>Analizar cada contenido en busca de algo valioso en cuanto cambias de app, sin ni un toque</item>
+        <item>Cambiar en silencio una dirección de monedero cripto o un IBAN bancario copiado por el del atacante, para que tu pago vaya a él</item>
+        <item>Construir un registro de todo lo que copias durante el día, porque cada elemento lleva una marca de tiempo y la app que lo creó</item>
+    </string-array>
+
+    <!-- Clipboard: pantalla de espera -->
+    <string name="clipboard_wait_title">Ahora ve y copia algo — lo que sea</string>
+    <string name="clipboard_wait_body">Esta demo no tiene fase en segundo plano, porque no la necesita. Sal de PermCalc, copia un texto o una imagen en cualquier parte de tu teléfono y vuelve. En cuanto esta app regrese al primer plano, lee tu portapapeles — sin permiso, sin aviso. En Android 12+ el sistema puede mostrar un instante que algo se pegó; en versiones anteriores, nada.</string>
+    <string name="clipboard_wait_step1">Sal de esta app (botón de inicio o selector de apps — no la cierres).</string>
+    <string name="clipboard_wait_step2">Abre lo que sea — Mensajes, Notas, tu navegador, tu gestor de contraseñas — y copia un texto o una imagen. Una contraseña o un código lo demuestran mejor.</string>
+    <string name="clipboard_wait_step3">Vuelve a PermCalc. Ya habrá leído lo que copiaste.</string>
+    <string name="clipboard_wait_nopermission">Nunca te preguntaron. No hay permiso que conceder ni denegar. Cualquier app que hayas abierto podría haber hecho exactamente esto.</string>
+
+    <!-- Clipboard: revelación -->
+    <string name="clipboard_reveal_title">Esto es lo que acabas de copiar</string>
+    <string name="clipboard_reveal_desc">Esta app lo leyó en cuanto volvió a la pantalla. Nunca preguntó. En Android 12 y posteriores el sistema pudo mostrar un breve aviso de «pegado desde el portapapeles» — pero solo después de leerlo, y no nombra nada de lo que tomó; los teléfonos más antiguos no muestran nada. Todo lo de abajo se guarda solo en memoria y desaparece al cerrar esta pantalla — un atacante real ya lo habría sacado de tu teléfono.</string>
+    <string name="clipboard_reveal_empty_title">El portapapeles estaba vacío</string>
+    <string name="clipboard_reveal_empty_desc">No había nada en tu portapapeles, o tu versión de Android lo borró mientras PermCalc estaba en segundo plano — algunas versiones nuevas lo hacen tras unos minutos como protección. Copia algo y vuelve para ver la lectura.</string>
+    <string name="clipboard_piece_text">Texto copiado</string>
+    <string name="clipboard_piece_image">Imagen copiada</string>
+    <string name="clipboard_piece_file">Archivo / enlace copiado</string>
+    <string name="clipboard_text_truncated">El contenido completo tiene %1$d caracteres — aquí se muestra en parte. Una app real se lo queda entero.</string>
+    <string name="clipboard_meta_label">Etiqueta</string>
+    <string name="clipboard_meta_copied">Copiado a las</string>
+    <string name="clipboard_meta_type">Tipo de dato</string>
+    <string name="clipboard_meta_sensitive">Marcado como sensible</string>
+    <string name="clipboard_meta_sensitive_yes">Sí — la app de origen lo marcó como privado (un teclado lo oculta en las vistas previas, pero cualquier lector obtiene igualmente el valor)</string>
+
+    <!-- Clipboard: el escaneo automático de una app maliciosa -->
+    <string name="clipboard_findings_title">Lo que marca el escáner de un atacante</string>
+    <string name="clipboard_findings_desc">Una app maliciosa no lee tu contenido a mano. Ejecuta unas comprobaciones instantáneas sobre cada elemento y extrae las partes valiosas. Aplicando esas mismas comprobaciones a lo que copiaste, esto es lo que habría señalado:</string>
+    <string name="clipboard_find_password">Contraseña</string>
+    <string name="clipboard_find_otp">Código 2FA / OTP</string>
+    <string name="clipboard_find_card">Número de tarjeta</string>
+    <string name="clipboard_find_iban">IBAN bancario</string>
+    <string name="clipboard_find_crypto">Dirección cripto</string>
+    <string name="clipboard_find_email">Correo</string>
+    <string name="clipboard_find_phone">Número de teléfono</string>
+    <string name="clipboard_find_url">Enlace</string>
+
+    <string name="clipboard_warning">Copiar una contraseña de tu gestor parece seguro — la pegas y sigues. Pero entre copiar y pegar queda en un cajón que cualquier app en primer plano puede abrir. La defensa son hábitos, no ajustes: pega de inmediato y luego copia algo inofensivo para sobrescribirla; para contraseñas y códigos usa el autocompletado en vez de copiar y pegar; y revisa siempre una dirección de monedero o un IBAN pegado carácter por carácter, porque cambiarlo es el robo más fácil de todos. El Android normal no tiene ningún interruptor para impedir que las apps lean el portapapeles — solo GrapheneOS te deja quitar ese acceso app por app.</string>
 </resources>

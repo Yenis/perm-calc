@@ -102,11 +102,21 @@ PermCalc closes that gap by making it concrete and personal:
 | **Contacts** | Reads your entire address book — names, phone numbers, email addresses | The full count and a scrollable list of the people it found |
 | **Location** | Takes a GPS/network fix and reverse-geocodes it | Street, neighbourhood, city, postal code, district, region, country, decimal and DMS coordinates, altitude, accuracy, provider and fix time |
 | **Storage / Media** | Enumerates every photo and video on the device | The total count and the most recent items, with names and metadata |
+| **Clipboard** | Reads whatever you have copied — text, images, file links — the moment the app returns to the foreground | The clip itself, its metadata, and the passwords, 2FA codes, card numbers, IBANs and wallet addresses a malicious app's scanner would pull straight out of it |
 
 Each demo is bracketed by two screens: an **info sheet** before (what this
 permission is for, how it gets abused) and a **reveal sheet** after (the data
 itself, plus what a malicious app would have done with it instead of showing
 you).
+
+The **clipboard** demo is the exception, and deliberately so: there *is* no
+clipboard permission on Android, so there is no dialog and no background phase.
+It takes over the screen, asks you to leave and copy something anywhere on your
+phone, and reads the clipboard the instant you return — because that is exactly
+what any foreground app can do, silently, with nothing to grant and nothing to
+notice. Standard Android offers no way to stop it; only
+[GrapheneOS](https://grapheneos.org/features) lets you revoke clipboard access
+per app.
 
 Available in **English, Deutsch and Bosanski** — tap the language chip in the
 header to switch.
@@ -190,7 +200,7 @@ deserves to be installed if that is verifiable rather than promised, so:
   Android's own dialog, and skipping a demo is always offered alongside granting
   it.
 
-The source is here to be read — the demos are five short files in
+The source is here to be read — the demos are a handful of short files in
 [`app/src/main/java/com/gemstech/permcalc/demos/`](app/src/main/java/com/gemstech/permcalc/demos/),
 using nothing but plain platform APIs.
 
@@ -225,6 +235,7 @@ app/src/main/java/com/gemstech/permcalc/
 ├── Calculator.kt          the calculator engine (it really is a calculator)
 ├── ui/
 │   ├── CalculatorScreen.kt  keypad, permission-demo row, background banner
+│   ├── ClipboardScreen.kt   the clipboard demo's own full screen (no permission)
 │   ├── DisclaimerScreen.kt  the first-run explanation
 │   ├── InfoSheet.kt         "legitimate uses" vs "how it's abused", pre-grant
 │   ├── RevealSheet.kt       the post-capture reveal, per permission

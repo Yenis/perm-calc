@@ -5,6 +5,22 @@ All notable changes to PermCalc are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- **The clipboard demo.** A sixth demo, and the sneakiest: reading the clipboard
+  needs no Android permission at all, so there is no dialog and no background
+  phase. It takes over its own screen, asks you to leave and copy anything
+  anywhere on your phone, and reads what you copied the instant you return —
+  text, images or file links. The reveal shows the clip, its metadata (label,
+  copy time, whether the source app flagged it sensitive), and runs the same
+  cheap scan a malicious app would: it singles out passwords, 2FA codes, card
+  numbers (Luhn-checked), IBANs (mod-97-checked), crypto addresses, emails and
+  phone numbers. Everything stays in memory and is dropped when the screen
+  closes. Blunt by design, because there is no setting to hide behind — standard
+  Android cannot stop this, and only GrapheneOS can revoke it per app.
+
 ## [1.1.0] - 2026-09-06
 
 Three more languages, and a language switcher.

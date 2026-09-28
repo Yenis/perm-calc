@@ -67,6 +67,10 @@ fun CalculatorScreen(currentLang: String, onSelectLang: (String) -> Unit) {
 
     var pendingDemo by remember { mutableStateOf<Demo?>(null) }
 
+    // The clipboard demo has no permission and no background phase: it takes
+    // over the screen and waits for the user to go copy something.
+    var clipboardOpen by remember { mutableStateOf(false) }
+
     fun toast(msg: String) = Toast.makeText(localized, msg, Toast.LENGTH_LONG).show()
 
     fun startDemo(demo: Demo) {
@@ -79,6 +83,9 @@ fun CalculatorScreen(currentLang: String, onSelectLang: (String) -> Unit) {
                     Demo.CONTACTS -> runContactsDemo(context)
                     Demo.LOCATION -> runLocationDemo(context)
                     Demo.STORAGE -> runStorageDemo(context)
+                    // Clipboard never reaches here: it opens its own screen
+                    // instead of running a background capture + reveal sheet.
+                    Demo.CLIPBOARD -> return@launch
                 }
                 revealResult = res
                 activeDemo = demo
@@ -104,7 +111,9 @@ fun CalculatorScreen(currentLang: String, onSelectLang: (String) -> Unit) {
         }
     }
 
-    Column(
+    if (clipboardOpen) {
+        ClipboardScreen(onClose = { clipboardOpen = false })
+    } else Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Palette.bg)
@@ -147,8 +156,8 @@ fun CalculatorScreen(currentLang: String, onSelectLang: (String) -> Unit) {
         }
 
         // Permission buttons
-        Row(modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 4.dp).padding(bottom = 8.dp)) {
-            Demo.ALL.forEach { demo ->
+        Row(modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp).padding(top = 4.dp)) {
+            Demo.PERMISSION_DEMOS.forEach { demo ->
                 PermButton(
                     icon = demoIcon(demo),
                     label = tr(permButtonLabelRes(demo)),
@@ -157,6 +166,10 @@ fun CalculatorScreen(currentLang: String, onSelectLang: (String) -> Unit) {
                 )
             }
         }
+        ClipboardButton(
+            modifier = Modifier.padding(horizontal = 12.dp).padding(bottom = 12.dp),
+            onClick = { activeDemo = Demo.CLIPBOARD; showInfo = true },
+        )
     }
 
     // Info sheet
@@ -166,8 +179,13 @@ fun CalculatorScreen(currentLang: String, onSelectLang: (String) -> Unit) {
             demo = infoDemo,
             onGrant = {
                 showInfo = false
-                pendingDemo = infoDemo
-                permLauncher.launch(permissionsFor(infoDemo))
+                if (infoDemo == Demo.CLIPBOARD) {
+                    activeDemo = null
+                    clipboardOpen = true
+                } else {
+                    pendingDemo = infoDemo
+                    permLauncher.launch(permissionsFor(infoDemo))
+                }
             },
             onSkip = { showInfo = false; activeDemo = null },
         )
@@ -322,5 +340,30 @@ private fun PermButton(icon: String, label: String, modifier: Modifier, onClick:
         Text(icon, fontSize = 18.sp)
         Spacer(Modifier.height(2.dp))
         Text(label.uppercase(), color = Palette.permButtonText, fontSize = 10.sp, fontWeight = FontWeight.SemiBold, textAlign = TextAlign.Center)
+    }
+}
+
+/** Full-width, set apart from the permission row: there is no permission here. */
+@Composable
+private fun ClipboardButton(modifier: Modifier = Modifier, onClick: () -> Unit) {
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(4.dp)
+            .clip(RoundedCornerShape(10.dp))
+            .border(1.dp, Palette.permButtonBorder, RoundedCornerShape(10.dp))
+            .background(Palette.permButton)
+            .clickable(onClick = onClick)
+            .padding(horizontal = 14.dp, vertical = 10.dp),
+        horizontalArrangement = Arrangement.spacedBy(10.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Text(demoIcon(Demo.CLIPBOARD), fontSize = 18.sp)
+        Text(
+            tr(R.string.perm_clipboard).uppercase(),
+            color = Palette.permButtonText, fontSize = 11.sp, fontWeight = FontWeight.SemiBold,
+        )
+        Spacer(Modifier.weight(1f))
+        Text(tr(R.string.clipboard_button_hint), color = Palette.maliciousText, fontSize = 11.sp)
     }
 }
